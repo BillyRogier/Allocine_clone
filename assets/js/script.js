@@ -1,15 +1,25 @@
 const menuBtn = document.getElementById("menu_icon");
 const userBtn = document.getElementById("user_btn");
-const allSlider = document.querySelectorAll(".slider");
+const main = document.querySelector("main");
+
+function main_active(element) {
+    if (element.classList.contains("active")) {
+        main.classList.add("active");
+    } else {
+        main.classList.remove("active");
+    }
+}
 
 menuBtn.addEventListener("click", () => {
     menuBtn.classList.toggle("active");
     userBtn.classList.remove("active");
+    main_active(menuBtn);
 });
 
 userBtn.addEventListener("click", () => {
     userBtn.classList.toggle("active");
     menuBtn.classList.remove("active");
+    main_active(userBtn);
 });
 
 function slide_scroll(chevron, id) {
