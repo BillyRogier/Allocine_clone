@@ -19,10 +19,6 @@ section {
     gap: 1.25rem;
 }
 
-div {
-    scroll-behavior: smooth;
-}
-
 h2 {
     text-align: center;
     font-size: 1.5625rem;
@@ -229,11 +225,13 @@ nav i {
 .chevron-left.active,
 .chevron-right.active {
     color: #000;
+    cursor: pointer;
 }
 
 .slider {
     overflow-y: scroll;
     grid-template-columns: repeat(4, 147px);
+    scroll-behavior: smooth;
 }
 
 .slider p {
