@@ -16,7 +16,11 @@ section {
 
 .grid {
     display: grid;
-    grid-gap: 1.25rem;
+    gap: 1.25rem;
+}
+
+div {
+    scroll-behavior: smooth;
 }
 
 h2 {
@@ -44,7 +48,7 @@ h2:before {
 
 .title_bar {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: flex-start;
     margin-bottom: 0.625rem;
 }
@@ -72,7 +76,19 @@ a {
     margin: 0 0.5rem;
 }
 
-/* -------------------------------------NAVBAR------------------------------------- */
+.subtitle {
+    font-family: montserratRegular, Arial, Sans-Serif;
+    font-size: 0.75rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.light {
+    font-size: 0.75rem;
+    color: #b3b3b3;
+}
+/* ------------------------------------- NAVBAR ------------------------------------- */
 
 nav {
     display: flex;
@@ -91,8 +107,15 @@ nav i {
 }
 
 #menu_icon {
+    gap: 4px;
     padding: 0 0.625rem;
     cursor: pointer;
+    width: 45px;
+}
+
+#menu_icon div {
+    height: 3px;
+    background-color: #333;
 }
 
 #menu_links {
@@ -180,9 +203,20 @@ nav i {
     padding: 0 0.625rem;
 }
 
-/* ------------------------------------- CINEMA ------------------------------------- */
-#chevron-left,
-#chevron-right {
+/* ------------------------------------- SLIDER ------------------------------------- */
+
+.slider-container {
+    position: relative;
+}
+
+.slider-indicator {
+    position: absolute;
+    top: -2.125rem;
+    right: 0;
+}
+
+.chevron-left,
+.chevron-right {
     border: none;
     background-color: transparent;
     color: #d8d8d8;
@@ -192,69 +226,25 @@ nav i {
     height: 23px;
 }
 
-#chevron-left.active,
-#chevron-right.active {
+.chevron-left.active,
+.chevron-right.active {
     color: #000;
 }
+
 .slider {
-    display: grid;
     overflow-y: scroll;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1.25rem;
-    position: relative;
+    grid-template-columns: repeat(4, 147px);
 }
 
-.slider-title {
-    font-size: 0.8125rem;
-    margin-bottom: 0.1875rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.slider-desc {
-    font-size: 0.75rem;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    width: 100%;
-    font-size: 13px;
-    text-decoration: none;
-    font-weight: 700;
-}
-
-.slider-desc p {
-    margin-top: 0.1875rem;
-}
-
-.light {
-    color: #b3b3b3;
-}
-
-.prochainement {
-    width: min-content;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-}
-
-.meta-title {
-    font-size: 0.8125rem;
-    font-weight: bold;
-    line-height: 1.5rem;
-    color: #333;
-}
-
-.slider-item {
-    width: 147px;
+.slider p {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .slider-item figure {
     position: relative;
-    height: 100%;
-    margin-bottom: 0.1875rem;
 }
 
-.slider-figure-desc {
+.slider-figure-meta {
     position: absolute;
     color: #fff;
     text-align: center;
@@ -272,36 +262,51 @@ nav i {
     );
 }
 
-.slider-figure-desc p {
+.slider-figure-meta p {
     padding-bottom: 0.3125rem;
 }
 
-/* list news */
-
-.light {
-    font-size: 0.75rem;
-    font-weight: 300;
-    color: #b3b3b3;
-    white-space: nowrap;
+.meta p {
+    margin-top: 0.1875rem;
     overflow: hidden;
+    white-space: nowrap;
     text-overflow: ellipsis;
 }
 
-.list_movie-container {
-    width: 100%;
-    margin-bottom: 1.5625rem;
+.meta-title {
+    font-size: 0.8125rem;
+    font-weight: 700;
 }
 
+/* ------------------------------------- LIST_MOVIE ------------------------------------- */
+
 .list_movie {
+    width: 100%;
+    font-family: "Montserrat", Arial, Sans-Serif;
+    font-weight: 700;
+}
+
+.list_movie li {
+    list-style: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 10px 0;
+    padding: 10px 10px 10px 0;
     border-bottom: 1px solid #e7e7e7;
 }
 
-.film_salle span {
+.list_movie .light {
+    font-size: 0.6875rem;
+}
+
+.list_movie-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list_movie-right span {
     width: 100%;
     text-transform: uppercase;
     color: #eabb00;
@@ -311,22 +316,20 @@ nav i {
     padding: 0.125rem 2rem;
 }
 
-.film_salle {
-    display: grid;
-    align-items: center;
-    grid-template-columns: 1fr 0.2fr;
-    grid-gap: 0.5rem;
+.list_movie-right i {
+    margin: 0 0.375rem;
 }
 
-.news-container {
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 0.9375rem;
+/* -------------------------------------NEWS------------------------------------- */
+
+.news {
+    gap: 0.9375rem;
     margin-bottom: 1.5625rem;
     align-items: flex-start;
     text-align: left;
 }
 
-.news {
+.news-item {
     padding-bottom: 0.9375rem;
     border-bottom: 1px solid #e7e7e7;
     font-size: 0.875rem;
@@ -335,37 +338,57 @@ nav i {
     position: relative;
 }
 
-.news figure {
+.news-item figure {
     float: left;
     width: 50%;
     margin-right: 0.9375rem;
 }
 
-.news-category {
+.meta-category {
     font-size: 0.625rem;
     margin: 0 1.25rem 0.3125rem 0;
     text-transform: uppercase;
     color: #fecc00;
 }
 
-/* bande annonce */
-.bande_annonces-container {
+/* -------------------------------------BANDE ANNONCE------------------------------------- */
+
+.bande_annonces {
     grid-template-columns: 1fr 1fr;
     color: #fff;
     margin-bottom: 1.5625rem;
+    font-family: Arial, sans-serif;
 }
 
-.bande_annonces-film-big {
+.video_card:first-child {
     grid-area: 1 / 1 / 2 / 3;
 }
 
-.bande_annonces-film-big figure,
-.bande_annonces-film figure {
+.video_card figure {
     position: relative;
 }
 
-.bande_annonces-title {
-    font-weight: 700;
+.video_card-info {
+    display: table;
+    background-color: #333;
+    width: 100%;
+    padding: 0.625rem;
+}
+
+.video_card-info .meta-title {
+    font-size: 1rem;
+}
+
+.video_card-info p {
+    white-space: inherit;
+}
+
+.video_card-info img {
+    margin: 0 0.625rem 0 0;
+    width: 3rem;
+}
+.video_card-info .meta {
+    display: table-cell;
 }
 
 .player_video {
@@ -374,6 +397,7 @@ nav i {
     background-color: rgba(0, 0, 0, 0.568);
     border-radius: 50%;
     border: 2px solid #fff;
+    color: #fff;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -387,22 +411,11 @@ nav i {
     font-size: 18px;
 }
 
-.bande_annonces-big-info {
-    display: table;
-    background-color: #333;
+.meta-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    padding: 0.625rem;
-}
-
-.bande_annonces-big-info img {
-    margin: 0 0.625rem 0 0;
-    width: 3rem;
-}
-.bande_annonces-big-info div {
-    display: table-cell;
-}
-
-.video_card-text {
     text-align: center;
     font-size: 0.75rem;
     display: block;
@@ -417,70 +430,43 @@ nav i {
     width: 100%;
 }
 
-.bande_annonces-film figure div {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
+/* -------------------------------------SVOD & VOD------------------------------------- */
 
-/* SVOD & VOD */
-
-#SVOD_VOD {
-    text-align: center;
-}
-
-.subtitle {
-    font-size: 0.75rem;
-    margin-bottom: 1rem;
-}
-
-.slider_item {
-    display: grid;
-    overflow-y: scroll;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-    position: relative;
-    margin-bottom: 2.5rem;
-}
-
-.item_logo {
-    width: 145px;
+.slider_icon .slider-item {
     padding: 0.5rem;
     border: 1px solid #e7e7e7;
     border-radius: 0.3125rem;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    text-align: center;
 }
 
-.item_logo img {
+.slider_icon-img {
     width: 3.75rem;
     height: 3.75rem;
     border-radius: 1rem;
     margin-bottom: 0.5rem;
 }
 
-.item_logo a {
-    color: #000;
-    text-decoration: none;
+.slider_icon p {
+    font-size: 0.6875rem;
 }
 
-/* roller series */
+/* -------------------------------------STREAMING------------------------------------- */
 
-.slider-item-streaming {
-    width: 19.63rem;
+.streaming {
+    grid-template-columns: repeat(3, 19.63rem);
 }
 
-.img_serie {
+.streaming figure {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    position: relative;
 }
 
-.img_serie::before {
+.streaming figure::before {
     content: "";
     position: absolute;
     top: 0;
@@ -490,57 +476,56 @@ nav i {
     background: rgba(0, 0, 0, 0.6);
 }
 
-.streaming {
-    position: relative;
-    margin-bottom: 0.4rem;
-}
-
-.slider-item-platform {
+.streaming figcaption {
     position: absolute;
-    bottom: 25%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #000;
     border-radius: 6px;
-    color: #fff;
     padding: 0.625rem 0;
     width: 220px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Montserrat", Arial, Sans-Serif;
 }
 
-.slider-item-streaming .light {
-    white-space: inherit;
-    text-align: left;
+.streaming figcaption p:first-child {
+    font-size: 0.8125rem;
+    line-height: 0.63rem;
+    margin-bottom: 0.2rem;
+    padding: 0.2rem 0.2rem 0.1rem;
+    font-weight: 400;
 }
 
-.slider-item-streaming .slider-desc {
-    white-space: inherit;
-    text-align: left;
-    overflow: visible;
-}
-
-/* series */
-.series-container {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.series-desc {
-    font-size: 0.75rem;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    width: 100%;
-    font-size: 13px;
-    text-decoration: none;
+.streaming figcaption p:last-child {
+    font-size: 0.8125rem;
     font-weight: 700;
-    text-align: left;
 }
 
-.series-item figure {
+.streaming .light {
+    font-size: 9px;
+}
+
+/* -------------------------------------SERIES------------------------------------- */
+
+.card-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.875rem 0.9375rem;
+}
+
+.card-item {
+    min-width: 0;
+}
+
+.card-item figure {
     position: relative;
     margin-bottom: 0.1875rem;
 }
 
 .number {
+    text-align: center;
     width: 2.5rem;
     height: 2.5rem;
     font-size: 1.25rem;
@@ -551,7 +536,7 @@ nav i {
     left: 0;
 }
 
-/* footer */
+/* -------------------------------------FOOTER------------------------------------- */
 
 .footer-cell {
     width: 100%;

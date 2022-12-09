@@ -14,8 +14,10 @@
     </head>
     <body>
         <nav>
-            <div id="menu_icon">
-                <i class="fa-solid fa-bars"></i>
+            <div id="menu_icon" class="grid">
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
             <ul id="menu_links">
                 <li><a href="#" class="links">NEWS</a></li>
@@ -47,85 +49,107 @@
             </ul>
         </nav>
         <main>
-            <article id="cinema">
-                <h2>Cinéma</h2>
+            <article>
+                <h2><a href="#">CINéMA</a></h2>
                 <section>
                     <div class="title_bar">
                         <h3><a href="#">Sorties de la semaine</a></h3>
-                        <div>
-                            <button id="chevron-left">
+                    </div>
+                    <div class="slider-container">
+                        <div class="slider-indicator">
+                            <button
+                                class="chevron-left"
+                                onclick="slide_left(0,'sortie_de_la_semaine')"
+                            >
                                 <i class="fa-solid fa-chevron-left"></i>
                             </button>
-                            <button id="chevron-right" class="active">
+                            <button
+                                class="chevron-right active"
+                                onclick="slide_right(0,'sortie_de_la_semaine')"
+                            >
                                 <i class="fa-solid fa-chevron-right"></i>
                             </button>
                         </div>
-                    </div>
-                    <div class="slider">
-                        <div class="slider-item">
-                            <div>
-                                <figure>
-                                    <a href="#">
+                        <div class="slider grid" id="sortie_de_la_semaine">
+                            <div class="slider-item">
+                                <a href="#">
+                                    <figure>
                                         <img
                                             src="./assets/img/croco.jpg"
-                                            alt="affiche Enzo le Croco"
+                                            alt="Enzo le Croco"
                                         />
-                                        <div class="slider-figure-desc">
+                                        <div class="slider-figure-meta">
                                             <p>Séances</p>
                                             <p>Bande-annonce</p>
                                         </div>
-                                    </a>
-                                </figure>
-                                <div class="slider-desc">
-                                    <a href="#">Enzo le Croco</a>
-                                    <p class="light">
-                                        De Will Speck, Josh Gordon
-                                    </p>
-                                </div>
+                                    </figure>
+                                    <div class="meta">
+                                        <p class="meta-title">Enzo le Croco</p>
+                                        <p class="light">
+                                            De Will Speck, Josh Gordon
+                                        </p>
+                                    </div>
+                                </a>
                             </div>
-                        </div>
-                        <div class="slider-item">
-                            <div>
-                                <figure>
-                                    <a href="#">
+                            <div class="slider-item">
+                                <a href="#">
+                                    <figure>
                                         <img
-                                            src="./assets/img/croco.jpg"
-                                            alt="affiche Enzo le Croco"
+                                            src="./assets/img/affiche_chat_potte2.jpg"
+                                            alt="Le Chat Potté 2 : la dernière quête"
                                         />
-                                        <div class="slider-figure-desc">
+                                        <div class="slider-figure-meta">
                                             <p>Séances</p>
                                             <p>Bande-annonce</p>
                                         </div>
-                                    </a>
-                                </figure>
-                                <div class="slider-desc">
-                                    <a href="#">Enzo le Croco</a>
-                                    <p class="light">
-                                        De Will Speck, Josh Gordon
-                                    </p>
-                                </div>
+                                    </figure>
+                                    <div class="meta">
+                                        <p class="meta-title">
+                                            Le Chat Potté 2 : la dernière quête
+                                        </p>
+                                        <p class="light">
+                                            De Januel P. Mercado, Joel Crawford
+                                        </p>
+                                    </div>
+                                </a>
                             </div>
-                        </div>
-                        <div class="slider-item">
-                            <div>
-                                <figure>
-                                    <a href="#">
+                            <div class="slider-item">
+                                <a href="#">
+                                    <figure>
                                         <img
-                                            src="./assets/img/croco.jpg"
-                                            alt="affiche Enzo le Croco"
+                                            src="./assets/img/affiche_maesstro.jpg"
+                                            alt="Maestro(s)"
                                         />
-                                        <div class="slider-figure-desc">
+                                        <div class="slider-figure-meta">
                                             <p>Séances</p>
                                             <p>Bande-annonce</p>
                                         </div>
-                                    </a>
-                                </figure>
-                                <div class="slider-desc">
-                                    <a href="#">Enzo le Croco</a>
-                                    <p class="light">
-                                        De Will Speck, Josh Gordon
-                                    </p>
-                                </div>
+                                    </figure>
+                                    <div class="meta">
+                                        <p class="meta-title">Maestro(s)</p>
+                                        <p class="light">De Bruno Chiche</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="slider-item">
+                                <a href="#">
+                                    <figure>
+                                        <img
+                                            src="./assets/img/affiche_le_royaume_des_etoiles.jpg"
+                                            alt="Le Royaume des étoiles"
+                                        />
+                                        <div class="slider-figure-meta">
+                                            <p>Séances</p>
+                                            <p>Bande-annonce</p>
+                                        </div>
+                                    </figure>
+                                    <div class="meta">
+                                        <p class="meta-title">
+                                            Le Royaume des étoiles
+                                        </p>
+                                        <p class="light">De Ali Samadi Ahadi</p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -133,150 +157,174 @@
                 <section>
                     <div class="title_bar">
                         <h3><a href="#">Toujours à l'affiche</a></h3>
-                        <div>
-                            <button id="chevron-left">
+                    </div>
+                    <div class="slider-container">
+                        <div class="slider-indicator">
+                            <button
+                                class="chevron-left"
+                                onclick="slide_left(1,'toujours_a_l_affiche')"
+                            >
                                 <i class="fa-solid fa-chevron-left"></i>
                             </button>
-                            <button id="chevron-right" class="active">
+                            <button
+                                class="chevron-right active"
+                                onclick="slide_right(1,'toujours_a_l_affiche')"
+                            >
                                 <i class="fa-solid fa-chevron-right"></i>
                             </button>
                         </div>
-                    </div>
-                    <div class="slider">
-                        <div class="slider-item">
-                            <div>
-                                <figure>
-                                    <a href="#">
+                        <div class="slider grid" id="toujours_a_l_affiche">
+                            <div class="slider-item">
+                                <a href="#">
+                                    <figure>
                                         <img
-                                            src="./assets/img/croco.jpg"
-                                            alt="affiche Enzo le Croco"
+                                            src="./assets/img/affiche_wakanda_forever.jpg"
+                                            alt="Black Panther: Wakanda Forever"
                                         />
-                                        <div class="slider-figure-desc">
+                                        <div class="slider-figure-meta">
                                             <p>Séances</p>
                                             <p>Bande-annonce</p>
                                         </div>
-                                    </a>
-                                </figure>
-                                <div class="slider-desc">
-                                    <a href="#">Enzo le Croco</a>
-                                    <p class="light">
-                                        De Will Speck, Josh Gordon
-                                    </p>
-                                </div>
+                                    </figure>
+                                    <div class="meta">
+                                        <p class="meta-title">
+                                            Black Panther: Wakanda Forever
+                                        </p>
+                                        <p class="light">De Ryan Coogler</p>
+                                    </div>
+                                </a>
                             </div>
-                        </div>
-                        <div class="slider-item">
-                            <div>
-                                <figure>
-                                    <a href="#">
+                            <div class="slider-item">
+                                <a href="#">
+                                    <figure>
                                         <img
-                                            src="./assets/img/croco.jpg"
-                                            alt="affiche Enzo le Croco"
+                                            src="./assets/img/affiche_reste_un_peu.jpg"
+                                            alt="Reste un peu"
                                         />
-                                        <div class="slider-figure-desc">
+                                        <div class="slider-figure-meta">
                                             <p>Séances</p>
                                             <p>Bande-annonce</p>
                                         </div>
-                                    </a>
-                                </figure>
-                                <div class="slider-desc">
-                                    <a href="#">Enzo le Croco</a>
-                                    <p class="light">
-                                        De Will Speck, Josh Gordon
-                                    </p>
-                                </div>
+                                    </figure>
+                                    <div class="meta">
+                                        <p class="meta-title">Reste un peu</p>
+                                        <p class="light">De Gad Elmaleh</p>
+                                    </div>
+                                </a>
                             </div>
-                        </div>
-                        <div class="slider-item">
-                            <div>
-                                <figure>
-                                    <a href="#">
+                            <div class="slider-item">
+                                <a href="#">
+                                    <figure>
                                         <img
-                                            src="./assets/img/croco.jpg"
-                                            alt="affiche Enzo le Croco"
+                                            src="./assets/img/le_torrent.jpg"
+                                            alt="Le Torrent"
                                         />
-                                        <div class="slider-figure-desc">
+                                        <div class="slider-figure-meta">
                                             <p>Séances</p>
                                             <p>Bande-annonce</p>
                                         </div>
-                                    </a>
-                                </figure>
-                                <div class="slider-desc">
-                                    <a href="#">Enzo le Croco</a>
-                                    <p class="light">
-                                        De Will Speck, Josh Gordon
-                                    </p>
-                                </div>
+                                    </figure>
+                                    <div class="meta">
+                                        <p class="meta-title">Le Torrent</p>
+                                        <p class="light">De Anne Le Ny</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="slider-item">
+                                <a href="#">
+                                    <figure>
+                                        <img
+                                            src="./assets/img/affiche_samhain.jpg"
+                                            alt="Samhain"
+                                        />
+                                        <div class="slider-figure-meta">
+                                            <p>Séances</p>
+                                            <p>Bande-annonce</p>
+                                        </div>
+                                    </figure>
+                                    <div class="meta">
+                                        <p class="meta-title">Samhain</p>
+                                        <p class="light">De Kate Dolan</p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </section>
                 <section>
-                    <div class="title_bar prochainement">
+                    <div class="title_bar">
                         <h3><a href="#">Prochainement</a></h3>
                         <p class="light">
                             Classement des films les plus consultés hier
                         </p>
                     </div>
-                    <ul class="list_movie-container">
-                        <li class="list_movie">
-                            <div>
-                                <p class="meta-title">
-                                    Avatar : la voie de l'eau
-                                </p>
-                                <p class="light">Date</p>
+                    <ul class="list_movie">
+                        <li>
+                            <div class="meta">
+                                <a href="#" class="meta-title">
+                                    Les Huit Montagnes
+                                </a>
+                                <p class="light">21 décembre 2022</p>
                             </div>
-                            <div class="film_salle">
+                            <div class="list_movie-right">
                                 <span>en salle</span>
-                                <i class="fa-regular fa-circle-play"></i>
+                                <a href="#"
+                                    ><i class="fa-regular fa-circle-play"></i
+                                ></a>
                             </div>
                         </li>
-                        <li class="list_movie">
-                            <div>
-                                <p class="meta-title">
+                        <li>
+                            <div class="meta">
+                                <a href="#" class="meta-title">
                                     Avatar : la voie de l'eau
-                                </p>
-                                <p class="light">Date</p>
+                                </a>
+                                <p class="light">14 décembre 2022</p>
                             </div>
-                            <div class="film_salle">
+                            <div class="list_movie-right">
                                 <span>en salle</span>
-                                <i class="fa-regular fa-circle-play"></i>
+                                <a href="#"
+                                    ><i class="fa-regular fa-circle-play"></i
+                                ></a>
                             </div>
                         </li>
-                        <li class="list_movie">
-                            <div>
-                                <p class="meta-title">
-                                    Avatar : la voie de l'eau
-                                </p>
-                                <p class="light">Date</p>
+                        <li>
+                            <div class="meta">
+                                <a href="#" class="meta-title"> Corsage </a>
+                                <p class="light">14 décembre 2022</p>
                             </div>
-                            <div class="film_salle">
+                            <div class="list_movie-right">
                                 <span>en salle</span>
-                                <i class="fa-regular fa-circle-play"></i>
+                                <a href="#"
+                                    ><i class="fa-regular fa-circle-play"></i
+                                ></a>
                             </div>
                         </li>
-                        <li class="list_movie">
-                            <div>
-                                <p class="meta-title">
-                                    Avatar : la voie de l'eau
-                                </p>
-                                <p class="light">Date</p>
+                        <li>
+                            <div class="meta">
+                                <a href="#" class="meta-title">
+                                    La Guerre des Lulus
+                                </a>
+                                <p class="light">18 janvier 2023</p>
                             </div>
-                            <div class="film_salle">
+                            <div class="list_movie-right">
                                 <span>en salle</span>
-                                <i class="fa-regular fa-circle-play"></i>
+                                <a href="#"
+                                    ><i class="fa-regular fa-circle-play"></i
+                                ></a>
                             </div>
                         </li>
-                        <li class="list_movie">
-                            <div>
-                                <p class="meta-title">
-                                    Avatar : la voie de l'eau
-                                </p>
-                                <p class="light">Date</p>
+                        <li>
+                            <div class="meta">
+                                <a href="#" class="meta-title">
+                                    Stella est amoureuse
+                                </a>
+                                <p class="light">14 décembre 2022</p>
                             </div>
-                            <div class="film_salle">
+                            <div class="list_movie-right">
                                 <span>en salle</span>
-                                <i class="fa-regular fa-circle-play"></i>
+                                <a href="#"
+                                    ><i class="fa-regular fa-circle-play"></i
+                                ></a>
                             </div>
                         </li>
                     </ul>
@@ -287,42 +335,96 @@
                             <a href="#">Dernière NEWS Cinéma</a>
                         </h3>
                     </div>
-                    <div class="news-container grid">
-                        <div class="news">
+                    <div class="news grid">
+                        <div class="news-item">
                             <figure>
-                                <img src="./assets/img/une_image.jpg" alt="" />
+                                <img
+                                    src="./assets/img/news_idee_cadeaux.jpg"
+                                    alt=""
+                                />
                             </figure>
-                            <div class="news_desc">
-                                <p class="news-category">NEWS - Streaming</p>
-                                <p>
-                                    Netflix : interdit aux moins de 18 ans, ce
-                                </p>
-                            </div>
-                        </div>
-                        <div class="news">
-                            <div class="news_desc">
-                                <p class="news-category">NEWS - Streaming</p>
-                                <a href="#">
-                                    Vous avez aimé Bohemian Rhapsody ? Rattrapez
-                                    un meilleur biopic musical sur Prime Video
+                            <div class="meta">
+                                <p class="meta-category">NEWS - Insolite</p>
+                                <a href="#" class="meta-title">
+                                    Idée cadeau de Noël : un livre qui dévoile
+                                    tous les secrets de Guillermo del Toro !
                                 </a>
                             </div>
                         </div>
-                        <div class="news">
-                            <div class="news_desc">
-                                <p class="news-category">NEWS - Streaming</p>
-                                <a href="#">
-                                    Vous avez aimé Bohemian Rhapsody ? Rattrapez
-                                    un meilleur biopic musical sur Prime Video
+                        <div class="news-item">
+                            <div class="meta">
+                                <p class="meta-category">NEWS - Streaming</p>
+                                <a href="#" class="meta-title">
+                                    Nouveautés Netflix : un célèbre personnage
+                                    de jeux vidéo déboule sur la plateforme
                                 </a>
                             </div>
                         </div>
-                        <div class="news">
-                            <div class="news_desc">
-                                <p class="news-category">NEWS - Streaming</p>
-                                <a href="#">
-                                    Vous avez aimé Bohemian Rhapsody ? Rattrapez
-                                    un meilleur biopic musical sur Prime Video
+                        <div class="news-item">
+                            <div class="meta">
+                                <p class="meta-category">NEWS - Streaming</p>
+                                <a href="#" class="meta-title">
+                                    La Nuit au musée sur Disney+ : quels sont
+                                    les liens entre le film d’animation et la
+                                    saga avec Ben Stiller ?
+                                </a>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <div class="meta">
+                                <p class="meta-category">NEWS - Sorties ciné</p>
+                                <a href="#" class="meta-title">
+                                    La Guerre des Lulus : découvrez la première
+                                    bande-annonce du film familial très attendu
+                                </a>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <div class="meta">
+                                <p class="meta-category">NEWS - Streaming</p>
+                                <a href="#" class="meta-title">
+                                    Sur Prime Video du 9 au 15 décembre : la
+                                    nouvelle pépite de la réalisatrice de
+                                    Mignonnes, l’un des meilleurs films de Denis
+                                    Villeneuve…
+                                </a>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <div class="meta">
+                                <p class="meta-category">NEWS - Streaming</p>
+                                <a href="#" class="meta-title">
+                                    Will Smith : son nouveau film est-il aussi
+                                    choc qu'annoncé ?
+                                </a>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <div class="meta">
+                                <p class="meta-category">NEWS - Streaming</p>
+                                <a href="#" class="meta-title">
+                                    Pinocchio sur Netflix : Guillermo del Toro
+                                    livre sa version sombre et désanchantée du
+                                    célèbre conte
+                                </a>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <div class="meta">
+                                <p class="meta-category">NEWS - Streaming</p>
+                                <a href="#" class="meta-title">
+                                    Hawa sur Prime Video : de Thomas Pesquet à
+                                    Michelle Obama, les inspirations du film de
+                                    Maïmouna Doucouré
+                                </a>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <div class="meta">
+                                <p class="meta-category">NEWS - Sorties ciné</p>
+                                <a href="#" class="meta-title">
+                                    Le Chat Potté 2 : où se situe le film dans
+                                    la saga Shrek ?
                                 </a>
                             </div>
                         </div>
@@ -334,131 +436,163 @@
                             <a href="#">Bandes-annonces à ne pas manquer</a>
                         </h3>
                     </div>
-                    <div class="bande_annonces-container grid">
-                        <div class="bande_annonces-film-big">
+                    <div class="bande_annonces grid">
+                        <div class="video_card">
                             <figure>
                                 <img
-                                    src="./assets/img/les_gardiens_de_la_galaxie.jpg"
-                                    alt="les gardiens de la galaxie"
+                                    src="./assets/img/amant_de_chatterley.jpg"
+                                    alt="L'Amant de Lady Chatterley"
                                 />
                                 <span class="player_video"
                                     ><i class="fa-solid fa-play"></i
                                 ></span>
                             </figure>
-                            <div class="bande_annonces-big-info">
+                            <div class="video_card-info">
                                 <img
-                                    src="./assets/img/affiche_les_gardiens.jpg"
+                                    src="./assets/img/affiche_amant_de_etc.jpg"
                                     alt="affiche les gardiens de la galaxie"
                                 />
-                                <div>
-                                    <p class="bande_annonces-title">
-                                        Les Gardiens de la galaxie : Joyeuses
-                                        fêtes
+                                <div class="meta">
+                                    <p class="meta-title">
+                                        L'Amant de Lady Chatterley
                                     </p>
                                     <p>
-                                        Les Gardiens de la galaxie : Joyeuses
-                                        fêtes Bande-annonce VO
+                                        L'Amant de Lady Chatterley Bande-annonce
+                                        VF
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="bande_annonces-film">
-                            <figure>
-                                <img
-                                    src="./assets/img/affiche_megan.jpg"
-                                    alt="les gardiens de la galaxie"
-                                />
-                                <span class="player_video"
-                                    ><i class="fa-solid fa-play"></i
-                                ></span>
-                                <div>
-                                    <a href="#" class="video_card-text">
-                                        Megan bande annonce VO
-                                    </a>
-                                </div>
-                            </figure>
-                        </div>
-                        <div class="bande_annonces-film">
-                            <figure>
-                                <img
-                                    src="./assets/img/affiche_megan.jpg"
-                                    alt="les gardiens de la galaxie"
-                                />
-                                <span class="player_video"
-                                    ><i class="fa-solid fa-play"></i
-                                ></span>
-                                <div>
-                                    <p class="video_card-text">
-                                        Megan bande annonce vo
+                        <div class="video_card">
+                            <a href="#">
+                                <figure>
+                                    <img
+                                        src="https://fr.web.img2.acsta.net/c_150_200/pictures/22/11/17/11/47/3561503.jpg"
+                                        alt="La Guerre des Lulus Bande-annonce VF"
+                                    />
+                                    <span class="player_video"
+                                        ><i class="fa-solid fa-play"></i
+                                    ></span>
+                                    <p class="meta-name">
+                                        La Guerre des Lulus Bande-annonce VF
                                     </p>
-                                </div>
-                            </figure>
+                                </figure>
+                            </a>
                         </div>
-                        <div class="bande_annonces-film">
-                            <figure>
-                                <img
-                                    src="./assets/img/affiche_megan.jpg"
-                                    alt="les gardiens de la galaxie"
-                                />
-                                <span class="player_video"
-                                    ><i class="fa-solid fa-play"></i
-                                ></span>
-                                <div>
-                                    <p class="video_card-text">
-                                        Megan bande annonce vo
+                        <div class="video_card">
+                            <a href="#">
+                                <figure>
+                                    <img
+                                        src="https://fr.web.img5.acsta.net/c_150_200/pictures/22/11/16/14/37/3945457.jpg"
+                                        alt="Les Huit Montagnes Bande-annonce VO"
+                                    />
+                                    <span class="player_video"
+                                        ><i class="fa-solid fa-play"></i
+                                    ></span>
+                                    <p class="meta-name">
+                                        Les Huit Montagnes Bande-annonce VO
                                     </p>
-                                </div>
-                            </figure>
+                                </figure>
+                            </a>
                         </div>
-                        <div class="bande_annonces-film">
-                            <figure>
-                                <img
-                                    src="./assets/img/affiche_megan.jpg"
-                                    alt="les gardiens de la galaxie"
-                                />
-                                <span class="player_video"
-                                    ><i class="fa-solid fa-play"></i
-                                ></span>
-                                <div>
-                                    <p class="video_card-text">
-                                        Megan bande annonce vo
+                        <div class="video_card">
+                            <a href="#">
+                                <figure>
+                                    <img
+                                        src="https://fr.web.img2.acsta.net/c_150_200/pictures/22/11/04/14/38/1746132.jpg"
+                                        alt="Falcon Lake Teaser VF"
+                                    />
+                                    <span class="player_video"
+                                        ><i class="fa-solid fa-play"></i
+                                    ></span>
+                                    <p class="meta-name">
+                                        Falcon Lake Teaser VF
                                     </p>
-                                </div>
-                            </figure>
+                                </figure>
+                            </a>
+                        </div>
+                        <div class="video_card">
+                            <a href="#">
+                                <figure>
+                                    <img
+                                        src="https://fr.web.img2.acsta.net/c_150_200/medias/nmedia/18/73/93/69/19221867.jpg"
+                                        alt="The Fantastic Four Bande-annonce VO"
+                                    />
+                                    <span class="player_video"
+                                        ><i class="fa-solid fa-play"></i
+                                    ></span>
+                                    <p class="meta-name">
+                                        The Fantastic Four Bande-annonce VO
+                                    </p>
+                                </figure>
+                            </a>
                         </div>
                     </div>
                 </section>
             </article>
-            <article id="SVOD_VOD">
+            <article>
                 <h2>SVOD & VOD</h2>
                 <p class="subtitle">
                     Accédez au contenu du catalogue de votre plateforme préférée
                     :
                 </p>
                 <section>
-                    <div class="title_bar">
-                        <a href="#"></a>
-                        <div>
-                            <button id="chevron-left">
+                    <div class="slider-container">
+                        <div class="slider-indicator">
+                            <button
+                                class="chevron-left"
+                                onclick="slide_left(2,'slider_icon')"
+                            >
                                 <i class="fa-solid fa-chevron-left"></i>
                             </button>
-                            <button id="chevron-right" class="active">
+                            <button
+                                class="chevron-right active"
+                                onclick="slide_right(2,'slider_icon')"
+                            >
                                 <i class="fa-solid fa-chevron-right"></i>
                             </button>
                         </div>
-                    </div>
-                    <div class="slider_item">
-                        <div class="item_logo">
-                            <img src="./assets/img/disney_logo.svg" alt="" />
-                            <a href="#">Disney +</a>
-                        </div>
-                        <div class="item_logo">
-                            <img src="./assets/img/disney_logo.svg" alt="" />
-                            <a href="#">Disney +</a>
-                        </div>
-                        <div class="item_logo">
-                            <img src="./assets/img/disney_logo.svg" alt="" />
-                            <a href="#">Disney +</a>
+                        <div class="slider slider_icon grid" id="slider_icon">
+                            <div class="slider-item">
+                                <a href="#">
+                                    <img
+                                        src="./assets/img/disney_logo.svg"
+                                        class="slider_icon-img"
+                                        alt=""
+                                    />
+                                    <p>Disney +</p></a
+                                >
+                            </div>
+                            <div class="slider-item">
+                                <a href="#">
+                                    <img
+                                        src="./assets/img/netflix_logo.svg"
+                                        class="slider_icon-img"
+                                        alt=""
+                                    />
+                                    <p>Netflix</p></a
+                                >
+                            </div>
+                            <div class="slider-item">
+                                <a href="#">
+                                    <img
+                                        src="./assets/img/prime_video_logo.svg"
+                                        class="slider_icon-img"
+                                        alt=""
+                                    />
+                                    <p>Amazon Prime Video</p></a
+                                >
+                            </div>
+                            <div class="slider-item">
+                                <a href="#">
+                                    <img
+                                        src="./assets/img/logo_canal.svg"
+                                        class="slider_icon-img"
+                                        alt=""
+                                    />
+                                    <p>Canal +</p></a
+                                >
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -468,8 +602,8 @@
                             <a href="#">Bandes-annonces streaming</a>
                         </h3>
                     </div>
-                    <div class="bande_annonces-container grid">
-                        <div class="bande_annonces-film-big">
+                    <div class="bande_annonces grid">
+                        <div class="video_card">
                             <figure>
                                 <img
                                     src="./assets/img/les_gardiens_de_la_galaxie.jpg"
@@ -479,13 +613,13 @@
                                     ><i class="fa-solid fa-play"></i
                                 ></span>
                             </figure>
-                            <div class="bande_annonces-big-info">
+                            <div class="video_card-info">
                                 <img
                                     src="./assets/img/affiche_les_gardiens.jpg"
                                     alt="affiche les gardiens de la galaxie"
                                 />
-                                <div>
-                                    <p class="bande_annonces-title">
+                                <div class="meta">
+                                    <p class="meta-title">
                                         Les Gardiens de la galaxie : Joyeuses
                                         fêtes
                                     </p>
@@ -496,114 +630,120 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="bande_annonces-film">
-                            <figure>
-                                <img
-                                    src="./assets/img/affiche_megan.jpg"
-                                    alt="les gardiens de la galaxie"
-                                />
-                                <span class="player_video"
-                                    ><i class="fa-solid fa-play"></i
-                                ></span>
-                                <div>
-                                    <a href="#" class="video_card-text">
-                                        Megan bande annonce VO
-                                    </a>
-                                </div>
-                            </figure>
-                        </div>
-                        <div class="bande_annonces-film">
-                            <figure>
-                                <img
-                                    src="./assets/img/affiche_megan.jpg"
-                                    alt="les gardiens de la galaxie"
-                                />
-                                <span class="player_video"
-                                    ><i class="fa-solid fa-play"></i
-                                ></span>
-                                <div>
-                                    <p class="video_card-text">
-                                        Megan bande annonce vo
+
+                        <div class="video_card">
+                            <a href="#">
+                                <figure>
+                                    <img
+                                        src="./assets/img/affiche_overdose.jpg"
+                                        alt="Overdose Bande-annonce VF"
+                                    />
+                                    <span class="player_video"
+                                        ><i class="fa-solid fa-play"></i
+                                    ></span>
+                                    <p class="meta-name">
+                                        Overdose Bande-annonce VF
                                     </p>
-                                </div>
-                            </figure>
+                                </figure>
+                            </a>
                         </div>
-                        <div class="bande_annonces-film">
-                            <figure>
-                                <img
-                                    src="./assets/img/affiche_megan.jpg"
-                                    alt="les gardiens de la galaxie"
-                                />
-                                <span class="player_video"
-                                    ><i class="fa-solid fa-play"></i
-                                ></span>
-                                <div>
-                                    <p class="video_card-text">
-                                        Megan bande annonce vo
+                        <div class="video_card">
+                            <a href="#">
+                                <figure>
+                                    <img
+                                        src="./assets/img/affiche_assassin.jpg"
+                                        alt="Assassin(s) Bande-annonce VO"
+                                    />
+                                    <span class="player_video"
+                                        ><i class="fa-solid fa-play"></i
+                                    ></span>
+                                    <p class="meta-name">
+                                        Assassin(s) Bande-annonce VO
                                     </p>
-                                </div>
-                            </figure>
+                                </figure>
+                            </a>
                         </div>
-                        <div class="bande_annonces-film">
-                            <figure>
-                                <img
-                                    src="./assets/img/affiche_megan.jpg"
-                                    alt="les gardiens de la galaxie"
-                                />
-                                <span class="player_video"
-                                    ><i class="fa-solid fa-play"></i
-                                ></span>
-                                <div>
-                                    <p class="video_card-text">
-                                        Megan bande annonce vo
+                        <div class="video_card">
+                            <a href="#">
+                                <figure>
+                                    <img
+                                        src="./assets/img/affiche_troll.jpg"
+                                        alt="Troll Bande-annonce VO"
+                                    />
+                                    <span class="player_video"
+                                        ><i class="fa-solid fa-play"></i
+                                    ></span>
+                                    <p class="meta-name">
+                                        Troll Bande-annonce VO
                                     </p>
-                                </div>
-                            </figure>
+                                </figure>
+                            </a>
+                        </div>
+                        <div class="video_card">
+                            <a href="#">
+                                <figure>
+                                    <img
+                                        src="./assets/img/affiche_le_patient.jpg"
+                                        alt="Le Patient Bande-annonce VF"
+                                    />
+                                    <span class="player_video"
+                                        ><i class="fa-solid fa-play"></i
+                                    ></span>
+                                    <p class="meta-name">
+                                        Le Patient Bande-annonce VF
+                                    </p>
+                                </figure>
+                            </a>
                         </div>
                     </div>
                 </section>
                 <section>
                     <div class="title_bar">
                         <h3>
-                            <a href="#">l'actu streaming</a>
+                            <a href="#">L'actu streaming</a>
                         </h3>
                     </div>
-                    <div class="news-container grid">
-                        <div class="news">
+                    <div class="news grid">
+                        <div class="news-item">
                             <figure>
-                                <img src="./assets/img/une_image.jpg" alt="" />
+                                <img
+                                    src="./assets/img/im_actu_streaming.jpg"
+                                    alt=""
+                                />
                             </figure>
-                            <div class="news_desc">
-                                <p class="news-category">NEWS - Streaming</p>
-                                <p>
-                                    Netflix : interdit aux moins de 18 ans, ce
-                                </p>
-                            </div>
-                        </div>
-                        <div class="news">
-                            <div class="news_desc">
-                                <p class="news-category">NEWS - Streaming</p>
-                                <a href="#">
-                                    Vous avez aimé Bohemian Rhapsody ? Rattrapez
-                                    un meilleur biopic musical sur Prime Video
+                            <div class="meta">
+                                <p class="meta-category">NEWS - Streaming</p>
+                                <a href="#" class="meta-title">
+                                    Mercredi sur Netflix : Lady Gaga refait la
+                                    célèbre danse de Jenna Ortega
                                 </a>
                             </div>
                         </div>
-                        <div class="news">
-                            <div class="news_desc">
-                                <p class="news-category">NEWS - Streaming</p>
-                                <a href="#">
-                                    Vous avez aimé Bohemian Rhapsody ? Rattrapez
-                                    un meilleur biopic musical sur Prime Video
+                        <div class="news-item">
+                            <div class="meta">
+                                <p class="meta-category">NEWS - Streaming</p>
+                                <a href="#" class="meta-title">
+                                    Harry et Meghan sur Netflix : les médias
+                                    anglais détestent le documentaire mais les
+                                    abonnés sont ravis
                                 </a>
                             </div>
                         </div>
-                        <div class="news">
-                            <div class="news_desc">
-                                <p class="news-category">NEWS - Streaming</p>
-                                <a href="#">
-                                    Vous avez aimé Bohemian Rhapsody ? Rattrapez
-                                    un meilleur biopic musical sur Prime Video
+                        <div class="news-item">
+                            <div class="meta">
+                                <p class="meta-category">NEWS - Streaming</p>
+                                <a href="#" class="meta-title">
+                                    Flop au cinéma, ce roman de SF jugé
+                                    inadaptable sera bientôt une série !
+                                </a>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <div class="meta">
+                                <p class="meta-category">NEWS - Sorties ciné</p>
+                                <a href="#" class="meta-title">
+                                    Nouveautés Netflix : un célèbre personnage
+                                    de jeux vidéo déboule sur la plateforme
                                 </a>
                             </div>
                         </div>
@@ -611,463 +751,458 @@
                 </section>
                 <section>
                     <div class="title_bar">
-                        <h3><a href="#">Streaming</a></h3>
-                        <div>
-                            <button id="chevron-left">
+                        <h3>
+                            <a href="#">Streaming</a>
+                        </h3>
+                    </div>
+                    <div class="slider-container">
+                        <div class="slider-indicator">
+                            <button
+                                class="chevron-left"
+                                onclick="slide_left(3,'streaming')"
+                            >
                                 <i class="fa-solid fa-chevron-left"></i>
                             </button>
-                            <button id="chevron-right" class="active">
+                            <button
+                                class="chevron-right active"
+                                onclick="slide_right(3,'streaming')"
+                            >
                                 <i class="fa-solid fa-chevron-right"></i>
                             </button>
                         </div>
-                    </div>
-                    <div class="slider">
-                        <div class="slider-item-streaming">
-                            <div>
-                                <figure class="streaming">
-                                    <a href="#">
-                                        <div class="img_serie">
-                                            <img
-                                                src="./assets/img/serie_canal1.jpg"
-                                                alt=""
-                                            />
-                                            <img
-                                                src="./assets/img/serie_canal2.jpg"
-                                                alt=""
-                                            />
-                                            <img
-                                                src="./assets/img/serie_canal3.jpg"
-                                                alt=""
-                                            />
-                                            <img
-                                                src="./assets/img/serie_canal4.jpg"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="slider-item-platform">
+                        <div class="slider streaming grid" id="streaming">
+                            <div class="slider-item">
+                                <a href="#">
+                                    <figure>
+                                        <img
+                                            src="./assets/img/serie_canal1.jpg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/serie_canal2.jpg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/serie_canal3.jpg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/serie_canal4.jpg"
+                                            alt=""
+                                        />
+                                        <figcaption>
                                             <p>Series à voir</p>
                                             <p>sur canal+</p>
-                                        </div>
-                                    </a>
-                                </figure>
-                                <div class="slider-desc">
-                                    <a href="#" class="light"
-                                        >Marie-Antoinette, American Horror
-                                        Story, Trigger Point, The Staircase,
-                                        Désordres</a
-                                    >
-                                </div>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="meta">
+                                        <a href="#" class="light"
+                                            >Marie-Antoinette, American Horror
+                                            Story, Trigger Point, The Staircase,
+                                            Désordres</a
+                                        >
+                                    </div>
+                                </a>
                             </div>
-                        </div>
-                        <div class="slider-item-streaming">
-                            <div>
-                                <figure class="streaming">
-                                    <a href="#">
-                                        <div class="img_serie">
-                                            <img
-                                                src="./assets/img/serie_canal1.jpg"
-                                                alt=""
-                                            />
-                                            <img
-                                                src="./assets/img/serie_canal2.jpg"
-                                                alt=""
-                                            />
-                                            <img
-                                                src="./assets/img/serie_canal3.jpg"
-                                                alt=""
-                                            />
-                                            <img
-                                                src="./assets/img/serie_canal4.jpg"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="slider-item-platform">
-                                            <p>Series à voir</p>
-                                            <p>sur canal+</p>
-                                        </div>
-                                    </a>
-                                </figure>
-                                <div class="slider-desc">
-                                    <a href="#" class="light"
-                                        >Marie-Antoinette, American Horror
-                                        Story, Trigger Point, The Staircase,
-                                        Désordres</a
-                                    >
-                                </div>
+                            <div class="slider-item">
+                                <a href="#">
+                                    <figure>
+                                        <img
+                                            src="./assets/img/netflix1.jpg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/netflix2.jpg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/netflix3.jpg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/netflix4.jpg"
+                                            alt=""
+                                        />
+                                        <figcaption>
+                                            <p>meilleures séries</p>
+                                            <p>sur netflix</p>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="meta">
+                                        <a href="#" class="light"
+                                            >Breaking Bad, Notre planète Arcane,
+                                            Peaky Blinders, L'Attaque des
+                                            Titans</a
+                                        >
+                                    </div>
+                                </a>
                             </div>
-                        </div>
-                        <div class="slider-item-streaming">
-                            <div>
-                                <figure class="streaming">
-                                    <a href="#">
-                                        <div class="img_serie">
-                                            <img
-                                                src="./assets/img/serie_canal1.jpg"
-                                                alt=""
-                                            />
-                                            <img
-                                                src="./assets/img/serie_canal2.jpg"
-                                                alt=""
-                                            />
-                                            <img
-                                                src="./assets/img/serie_canal3.jpg"
-                                                alt=""
-                                            />
-                                            <img
-                                                src="./assets/img/serie_canal4.jpg"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="slider-item-platform">
-                                            <p>Series à voir</p>
-                                            <p>sur canal+</p>
-                                        </div>
-                                    </a>
-                                </figure>
-                                <div class="slider-desc">
-                                    <a href="#" class="light"
-                                        >Marie-Antoinette, American Horror
-                                        Story, Trigger Point, The Staircase,
-                                        Désordres</a
-                                    >
-                                </div>
+                            <div class="slider-item">
+                                <a href="#">
+                                    <figure>
+                                        <img
+                                            src="./assets/img/disney1.jpg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/disney2.jpg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/disney3.jpg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/disney4.jpg"
+                                            alt=""
+                                        />
+                                        <figcaption>
+                                            <p>films disponibles</p>
+                                            <p>sur Disney+</p>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="meta">
+                                        <a href="#" class="light"
+                                            >Black Panther, Avatar, Il était une
+                                            fois 2, Barbare, Willow</a
+                                        >
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </section>
                 <section>
                     <div class="title_bar">
-                        <h3><a href="#">VOD & dvd/blu-ray</a></h3>
-                        <div>
-                            <button id="chevron-left">
+                        <h3>
+                            <a href="#">VOD & DVD/BLU-RAY</a>
+                        </h3>
+                    </div>
+                    <div class="slider-container">
+                        <div class="slider-indicator">
+                            <button
+                                class="chevron-left"
+                                onclick="slide_left(4,'VOD')"
+                            >
                                 <i class="fa-solid fa-chevron-left"></i>
                             </button>
-                            <button id="chevron-right" class="active">
+                            <button
+                                class="chevron-right active"
+                                onclick="slide_right(4,'VOD')"
+                            >
                                 <i class="fa-solid fa-chevron-right"></i>
                             </button>
                         </div>
-                    </div>
-                    <div class="slider">
-                        <div class="slider-item-streaming">
-                            <div>
-                                <figure class="streaming">
-                                    <a href="#">
-                                        <div class="img_serie">
-                                            <img
-                                                src="./assets/img/serie_canal1.jpg"
-                                                alt=""
-                                            />
-                                            <img
-                                                src="./assets/img/serie_canal2.jpg"
-                                                alt=""
-                                            />
-                                            <img
-                                                src="./assets/img/serie_canal3.jpg"
-                                                alt=""
-                                            />
-                                            <img
-                                                src="./assets/img/serie_canal4.jpg"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="slider-item-platform">
-                                            <p>Series à voir</p>
-                                            <p>sur canal+</p>
-                                        </div>
-                                    </a>
-                                </figure>
-                                <div class="slider-desc">
-                                    <a href="#" class="light"
-                                        >Marie-Antoinette, American Horror
-                                        Story, Trigger Point, The Staircase,
-                                        Désordres</a
-                                    >
-                                </div>
+                        <div class="slider streaming grid" id="VOD">
+                            <div class="slider-item">
+                                <a href="#">
+                                    <figure>
+                                        <img
+                                            src="./assets/img/vod1.jpg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/vod2.jpg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/vod3.jpg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/disney4.jpg"
+                                            alt=""
+                                        />
+                                        <figcaption>
+                                            <p>Les derniers films</p>
+                                            <p>en vod</p>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="meta">
+                                        <a href="#" class="light"
+                                            >The Desperate Hour, Amants
+                                            super-héroïques, Les Volets verts,
+                                            Barbare, 107 Mothers</a
+                                        >
+                                    </div>
+                                </a>
                             </div>
-                        </div>
-                        <div class="slider-item-streaming">
-                            <div>
-                                <figure class="streaming">
-                                    <a href="#">
-                                        <div class="img_serie">
-                                            <img
-                                                src="./assets/img/serie_canal1.jpg"
-                                                alt=""
-                                            />
-                                            <img
-                                                src="./assets/img/serie_canal2.jpg"
-                                                alt=""
-                                            />
-                                            <img
-                                                src="./assets/img/serie_canal3.jpg"
-                                                alt=""
-                                            />
-                                            <img
-                                                src="./assets/img/serie_canal4.jpg"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="slider-item-platform">
-                                            <p>Series à voir</p>
-                                            <p>sur canal+</p>
-                                        </div>
-                                    </a>
-                                </figure>
-                                <div class="slider-desc">
-                                    <a href="#" class="light"
-                                        >Marie-Antoinette, American Horror
-                                        Story, Trigger Point, The Staircase,
-                                        Désordres</a
-                                    >
-                                </div>
+                            <div class="slider-item">
+                                <a href="#">
+                                    <figure>
+                                        <img
+                                            src="./assets/img/vod_s1.jpg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/vod_s2.jpg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/vod_s3.jpg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/vod_s4.jpg"
+                                            alt=""
+                                        />
+                                        <figcaption>
+                                            <p>Les dernières séries</p>
+                                            <p>en vod</p>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="meta">
+                                        <a href="#" class="light"
+                                            >Ramy, Power Book IV : Force, En
+                                            Pilgrims Död, Ultime recours,
+                                            Histoires Fantastiques</a
+                                        >
+                                    </div>
+                                </a>
                             </div>
-                        </div>
-                        <div class="slider-item-streaming">
-                            <div>
-                                <figure class="streaming">
-                                    <a href="#">
-                                        <div class="img_serie">
-                                            <img
-                                                src="./assets/img/serie_canal1.jpg"
-                                                alt=""
-                                            />
-                                            <img
-                                                src="./assets/img/serie_canal2.jpg"
-                                                alt=""
-                                            />
-                                            <img
-                                                src="./assets/img/serie_canal3.jpg"
-                                                alt=""
-                                            />
-                                            <img
-                                                src="./assets/img/serie_canal4.jpg"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="slider-item-platform">
-                                            <p>Series à voir</p>
-                                            <p>sur canal+</p>
-                                        </div>
-                                    </a>
-                                </figure>
-                                <div class="slider-desc">
-                                    <a href="#" class="light"
-                                        >Marie-Antoinette, American Horror
-                                        Story, Trigger Point, The Staircase,
-                                        Désordres</a
-                                    >
-                                </div>
+                            <div class="slider-item">
+                                <a href="#">
+                                    <figure>
+                                        <img
+                                            src="./assets/img/serie_canal1.jpg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/disney2.jpg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/vod2.jpg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/netflix2.jpg"
+                                            alt=""
+                                        />
+                                        <figcaption>
+                                            <p>Sorties</p>
+                                            <p>dvd & blu-ray</p>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="meta">
+                                        <a href="#" class="light"
+                                            >Black Panther, Avatar, Il était une
+                                            fois 2, Barbare, Willow</a
+                                        >
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </section>
             </article>
-            <article id="series">
+            <article>
                 <h2>Séries</h2>
                 <section>
                     <div class="title_bar">
                         <h3><a href="#">Top séries de la semaine</a></h3>
                     </div>
-                    <div class="series-container grid">
-                        <div class="series-item">
-                            <div>
+                    <div class="card-container grid">
+                        <div class="card-item">
+                            <a href="#">
                                 <figure>
-                                    <a href="#">
-                                        <img
-                                            src="./assets/img/croco.jpg"
-                                            alt="affiche Enzo le Croco"
-                                        />
-                                    </a>
+                                    <img
+                                        src="./assets/img/affiche_mercredi.jpg"
+                                        alt="Mercredi"
+                                    />
                                     <div class="number">1</div>
                                 </figure>
-                                <div class="series-desc">
-                                    <a href="#">Enzo le Croco</a>
+                                <div class="meta">
+                                    <p class="meta-title">Mercredi</p>
                                     <p class="light">
-                                        De Will Speck, Josh Gordon
+                                        Comédie, Fantastique, Policier
                                     </p>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                        <div class="series-item">
-                            <div>
+                        <div class="card-item">
+                            <a href="#">
                                 <figure>
-                                    <a href="#">
-                                        <img
-                                            src="./assets/img/croco.jpg"
-                                            alt="affiche Enzo le Croco"
-                                        />
-                                    </a>
+                                    <img
+                                        src="./assets/img/affiche_1899.jpg"
+                                        alt="1899"
+                                    />
                                     <div class="number">2</div>
                                 </figure>
-                                <div class="series-desc">
-                                    <a href="#">Enzo le Croco</a>
+                                <div class="meta">
+                                    <p class="meta-title">1899</p>
                                     <p class="light">
-                                        De Will Speck, Josh Gordon
+                                        Drame, Epouvante-horreur, Thriller
                                     </p>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                        <div class="series-item">
-                            <div>
+                        <div class="card-item">
+                            <a href="#">
                                 <figure>
-                                    <a href="#">
-                                        <img
-                                            src="./assets/img/croco.jpg"
-                                            alt="affiche Enzo le Croco"
-                                        />
-                                    </a>
+                                    <img
+                                        src="./assets/img/affiche_rogue.jpg"
+                                        alt="Rogue Heroes"
+                                    />
                                     <div class="number">3</div>
                                 </figure>
-                                <div class="series-desc">
-                                    <a href="#">Enzo le Croco</a>
+                                <div class="meta">
+                                    <p class="meta-title">Rogue Heroes</p>
                                     <p class="light">
-                                        De Will Speck, Josh Gordon
+                                        Drame, Guerre, Historique, Action
                                     </p>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                        <div class="series-item">
-                            <div>
+                        <div class="card-item">
+                            <a href="#">
                                 <figure>
-                                    <a href="#">
-                                        <img
-                                            src="./assets/img/croco.jpg"
-                                            alt="affiche Enzo le Croco"
-                                        />
-                                    </a>
+                                    <img
+                                        src="./assets/img/affiche_willow.jpg"
+                                        alt="Willow"
+                                    />
                                     <div class="number">4</div>
                                 </figure>
-                                <div class="series-desc">
-                                    <a href="#">Enzo le Croco</a>
-                                    <p class="light">
-                                        De Will Speck, Josh Gordon
-                                    </p>
+                                <div class="meta">
+                                    <p class="meta-title">Willow</p>
+                                    <p class="light">Aventure, Fantastique</p>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </section>
                 <section>
                     <div class="title_bar">
-                        <h3><a href="#">Les séries les plus attendues</a></h3>
+                        <h3><a href="#">les séries les plus attendues</a></h3>
                     </div>
-                    <div class="series-container grid">
-                        <div class="series-item">
-                            <div>
+                    <div class="card-container grid">
+                        <div class="card-item">
+                            <a href="#">
                                 <figure>
-                                    <a href="#">
-                                        <img
-                                            src="./assets/img/croco.jpg"
-                                            alt="affiche Enzo le Croco"
-                                        />
-                                    </a>
+                                    <img
+                                        src="./assets/img/affiche_tresors_perdu.jpg"
+                                        alt="Trésors perdus : le secret de Montezuma"
+                                    />
                                 </figure>
-                                <div class="series-desc">
-                                    <a href="#">Enzo le Croco</a>
-                                    <p class="light">
-                                        De Will Speck, Josh Gordon
+                                <div class="meta">
+                                    <p class="meta-title">
+                                        Trésors perdus : le secret de Montezuma
                                     </p>
+                                    <p class="light">Aventure</p>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                        <div class="series-item">
-                            <div>
+                        <div class="card-item">
+                            <a href="#">
                                 <figure>
-                                    <a href="#">
-                                        <img
-                                            src="./assets/img/croco.jpg"
-                                            alt="affiche Enzo le Croco"
-                                        />
-                                    </a>
+                                    <img
+                                        src="./assets/img/affiche_the_last_etc.jpg"
+                                        alt="The Last Of Us"
+                                    />
                                 </figure>
-                                <div class="series-desc">
-                                    <a href="#">Enzo le Croco</a>
+                                <div class="meta">
+                                    <p class="meta-title">The Last Of Us</p>
                                     <p class="light">
-                                        De Will Speck, Josh Gordon
+                                        Aventure, Epouvante-horreur, Action
                                     </p>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                        <div class="series-item">
-                            <div>
+                        <div class="card-item">
+                            <a href="#">
                                 <figure>
-                                    <a href="#">
-                                        <img
-                                            src="./assets/img/croco.jpg"
-                                            alt="affiche Enzo le Croco"
-                                        />
-                                    </a>
+                                    <img
+                                        src="./assets/img/affiche_septieme_ciel.jpg"
+                                        alt="Septième Ciel"
+                                    />
                                 </figure>
-                                <div class="series-desc">
-                                    <a href="#">Enzo le Croco</a>
-                                    <p class="light">
-                                        De Will Speck, Josh Gordon
-                                    </p>
+                                <div class="meta">
+                                    <p class="meta-title">Septième Ciel</p>
+                                    <p class="light">Comédie dramatique</p>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                        <div class="series-item">
-                            <div>
+                        <div class="card-item">
+                            <a href="#">
                                 <figure>
-                                    <a href="#">
-                                        <img
-                                            src="./assets/img/croco.jpg"
-                                            alt="affiche Enzo le Croco"
-                                        />
-                                    </a>
+                                    <img
+                                        src="./assets/img/affiche_wolfpack.jpg"
+                                        alt="Wolf Pack"
+                                    />
                                 </figure>
-                                <div class="series-desc">
-                                    <a href="#">Enzo le Croco</a>
+                                <div class="meta">
+                                    <p class="meta-title">Wolf Pack</p>
                                     <p class="light">
-                                        De Will Speck, Josh Gordon
+                                        Comédie, Drame, Fantastique
                                     </p>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </section>
                 <section>
                     <div class="title_bar">
                         <h3>
-                            <a href="#">l'actu séries</a>
+                            <a href="#">L'actu séries</a>
                         </h3>
                     </div>
-                    <div class="news-container grid">
-                        <div class="news">
+                    <div class="news grid">
+                        <div class="news-item">
                             <figure>
-                                <img src="./assets/img/une_image.jpg" alt="" />
+                                <img
+                                    src="./assets/img/actu_plus_bellevie.jpg"
+                                    alt=""
+                                />
                             </figure>
-                            <div class="news_desc">
-                                <p class="news-category">NEWS - Streaming</p>
-                                <p>
-                                    Netflix : interdit aux moins de 18 ans, ce
+                            <div class="meta">
+                                <p class="meta-category">
+                                    NEWS - Séries à la TV
                                 </p>
-                            </div>
-                        </div>
-                        <div class="news">
-                            <div class="news_desc">
-                                <p class="news-category">NEWS - Streaming</p>
-                                <a href="#">
-                                    Vous avez aimé Bohemian Rhapsody ? Rattrapez
-                                    un meilleur biopic musical sur Prime Video
+                                <a href="#" class="meta-title">
+                                    Plus belle la vie : la voiture de Boher va
+                                    être mise aux enchères
                                 </a>
                             </div>
                         </div>
-                        <div class="news">
-                            <div class="news_desc">
-                                <p class="news-category">NEWS - Streaming</p>
-                                <a href="#">
-                                    Vous avez aimé Bohemian Rhapsody ? Rattrapez
-                                    un meilleur biopic musical sur Prime Video
+                        <div class="news-item">
+                            <div class="meta">
+                                <p class="meta-category">
+                                    NEWS - Séries à la TV
+                                </p>
+                                <a href="#" class="meta-title">
+                                    New York Unité Spéciale : un personnage
+                                    phare a fait ses adieux à la série
                                 </a>
                             </div>
                         </div>
-                        <div class="news">
-                            <div class="news_desc">
-                                <p class="news-category">NEWS - Streaming</p>
-                                <a href="#">
-                                    Vous avez aimé Bohemian Rhapsody ? Rattrapez
-                                    un meilleur biopic musical sur Prime Video
+                        <div class="news-item">
+                            <div class="meta">
+                                <p class="meta-category">NEWS - Streaming</p>
+                                <a href="#" class="meta-title">
+                                    Mercredi sur Netflix : Lady Gaga refait la
+                                    célèbre danse de Jenna Ortega
+                                </a>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <div class="meta">
+                                <p class="meta-category">NEWS - Streaming</p>
+                                <a href="#" class="meta-title">
+                                    Harry et Meghan sur Netflix : les médias
+                                    anglais détestent le documentaire mais les
+                                    abonnés sont ravis
+                                </a>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <div class="meta">
+                                <p class="meta-category">
+                                    NEWS - Séries à la TV
+                                </p>
+                                <a href="#" class="meta-title">
+                                    Ici tout commence : Salomé au cœur d'un
+                                    nouveau triangle amoureux avec Thomas et
+                                    Gaëtan ?
                                 </a>
                             </div>
                         </div>
