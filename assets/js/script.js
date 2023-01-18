@@ -95,16 +95,21 @@ function navbar() {
 window.addEventListener("load", navbar);
 window.addEventListener("resize", navbar);
 
-const slider = document.querySelectorAll(".slider");
-
-window.addEventListener("load", function () {
+function arrowShow(slider) {
     for (i = 0; i < slider.length; i++) {
+        const sliderContainer = slider[i].parentNode;
+        const arrow = sliderContainer.querySelector(".slider-indicator");
         if (slider[i].scrollWidth <= slider[i].offsetWidth) {
-            const sliderContainer = slider[i].parentNode;
-            console.log(sliderContainer);
-            const arrow = sliderContainer.querySelector(".slider-indicator");
-            console.log(arrow);
             arrow.style.display = "none";
+        } else {
+            arrow.style.display = "block";
         }
     }
-});
+}
+
+const slider = document.querySelectorAll(".slider");
+
+window.addEventListener("load", arrowShow(slider));
+document.getElementsByTagName("BODY")[0].onresize = function () {
+    arrowShow(slider);
+};
