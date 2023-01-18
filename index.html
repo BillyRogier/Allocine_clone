@@ -21,342 +21,497 @@
     </head>
     <body>
         <header>
-            <nav>
-                <div id="menu_icon" class="grid">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+            <div class="header-container">
+                <div class="header-top">
+                    <div id="menu_icon" class="grid">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <a href="/" id="logo"
+                        ><img
+                            src="./assets/img/logo-main-ab1b33daf0.svg"
+                            alt="allocine"
+                    /></a>
+                    <form>
+                        <fieldset>
+                            <input
+                                type="text"
+                                placeholder="Rechercher un film, une série, une star..."
+                            />
+                            <button id="form-search_icon">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </fieldset>
+                        <p class="header-search-extralinks">
+                            Ex. :
+                            <a href="/film/fichefilm_gen_cfilm=242600.html"
+                                >Un homme en colère</a
+                            >,
+                            <a href="/film/fichefilm_gen_cfilm=227548.html"
+                                >West Side Story</a
+                            >,
+                            <a href="/series/ficheserie_gen_cserie=18145.html"
+                                >Lucifer</a
+                            >,
+                            <a href="/series/ficheserie_gen_cserie=19475.html"
+                                >The Resident</a
+                            >
+                        </p>
+                    </form>
+                    <div id="search_icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <button id="user_btn-responsive">
+                        <i class="fa-regular fa-user"></i>
+                    </button>
                 </div>
-                <ul id="menu_links">
-                    <li><a href="#" class="links">NEWS</a></li>
-                    <li><a href="#" class="links">Cinéma</a></li>
-                    <li><a href="#" class="links">séries</a></li>
-                    <li><a href="#" class="links">streaming</a></li>
-                    <li><a href="#" class="links">trailers</a></li>
-                    <li><a href="#" class="links">dvd</a></li>
-                    <li><a href="#" class="links">vod</a></li>
-                    <li><a href="#" class="links">kids</a></li>
-                    <li><a href="#" class="links">disney+</a></li>
-                </ul>
-                <a href="/" id="logo"
-                    ><img
-                        src="./assets/img/logo-main-ab1b33daf0.svg"
-                        alt="allocine"
-                /></a>
-                <div id="search_icon">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                <nav>
+                    <ul id="menu_links">
+                        <li><a href="#" class="links">NEWS</a></li>
+                        <li><a href="#" class="links">Cinéma</a></li>
+                        <li><a href="#" class="links">séries</a></li>
+                        <li><a href="#" class="links">streaming</a></li>
+                        <li><a href="#" class="links">trailers</a></li>
+                        <li><a href="#" class="links">dvd</a></li>
+                        <li><a href="#" class="links">vod</a></li>
+                        <li><a href="#" class="links">kids</a></li>
+                        <li><a href="#" class="links">disney+</a></li>
+                    </ul>
+                    <div id="user-container">
+                        <button id="user_btn">
+                            <i class="fa-regular fa-user"></i>
+                            <p class="btn_text">MON COMPTE</p>
+                        </button>
+                        <div id="menu_login">
+                            <a href="#" class="button_ghost">Identifiez-vous</a>
+                            <a href="#" class="button_fill"
+                                >créer votre compte</a
+                            >
+                        </div>
+                    </div>
+                </nav>
+                <div class="title">
+                    <h1>
+                        Découvrez notre recherche de
+                        <a href="/salle/">séances cinéma</a>, les
+                        <a href="/news/">news</a> et
+                        <a href="/dossiers/">dossiers</a> cinéma et séries TV,
+                        les <a href="/video/">émissions AlloCiné</a>, les
+                        <a href="/video/bandes-annonces/plus-recentes/"
+                            >dernières bandes-annonces</a
+                        >
+                        et plus encore...
+                    </h1>
                 </div>
-                <button id="user_btn" class="btn">
-                    <i class="fa-regular fa-user"></i>
-                </button>
-                <ul id="menu_login">
-                    <li><a href="#" class="login-btn">Identifiez-vous</a></li>
-                    <li>
-                        <a href="#" class="sign_in-btn">créer votre compte</a>
-                    </li>
-                </ul>
-            </nav>
-            <h1>
-                Découvrez notre recherche de
-                <a href="/salle/">séances cinéma</a>, les
-                <a href="/news/">news</a> et
-                <a href="/dossiers/">dossiers</a> cinéma et séries TV, les
-                <a href="/video/">émissions AlloCiné</a>, les
-                <a href="/video/bandes-annonces/plus-recentes/"
-                    >dernières bandes-annonces</a
-                >
-                et plus encore...
-            </h1>
+            </div>
         </header>
         <main>
             <article>
                 <h2><a href="#">CINéMA</a></h2>
-                <section>
-                    <div class="title_bar">
-                        <h3><a href="#">Sorties de la semaine</a></h3>
+                <div class="cinema-container grid">
+                    <div class="sliders">
+                        <section>
+                            <div class="title_bar">
+                                <h3><a href="#">Sorties de la semaine</a></h3>
+                            </div>
+                            <div class="slider-container">
+                                <div class="slider-indicator">
+                                    <button
+                                        class="chevron-left"
+                                        onclick="slide_left(0,'sortie_de_la_semaine')"
+                                    >
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </button>
+                                    <button
+                                        class="chevron-right active"
+                                        onclick="slide_right(0,'sortie_de_la_semaine')"
+                                    >
+                                        <i
+                                            class="fa-solid fa-chevron-right"
+                                        ></i>
+                                    </button>
+                                </div>
+                                <div
+                                    class="slider grid"
+                                    id="sortie_de_la_semaine"
+                                    onscroll="slide_scroll(0, this.id)"
+                                >
+                                    <div class="slider-item">
+                                        <a href="#">
+                                            <figure>
+                                                <img
+                                                    src="./assets/img/croco.jpg"
+                                                    alt="Enzo le Croco"
+                                                />
+                                                <figcaption
+                                                    class="slider-figure-meta"
+                                                >
+                                                    <p>Séances</p>
+                                                    <p>Bande-annonce</p>
+                                                </figcaption>
+                                            </figure>
+                                            <div class="meta">
+                                                <p class="meta-title">
+                                                    Enzo le Croco
+                                                </p>
+                                                <p class="light">
+                                                    De Will Speck, Josh Gordon
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="slider-item">
+                                        <a href="#">
+                                            <figure>
+                                                <img
+                                                    src="./assets/img/affiche_chat_potte2.jpg"
+                                                    alt="Le Chat Potté 2 : la dernière quête"
+                                                />
+                                                <figcaption
+                                                    class="slider-figure-meta"
+                                                >
+                                                    <p>Séances</p>
+                                                    <p>Bande-annonce</p>
+                                                </figcaption>
+                                            </figure>
+                                            <div class="meta">
+                                                <p class="meta-title">
+                                                    Le Chat Potté 2 : la
+                                                    dernière quête
+                                                </p>
+                                                <p class="light">
+                                                    De Januel P. Mercado, Joel
+                                                    Crawford
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="slider-item">
+                                        <a href="#">
+                                            <figure>
+                                                <img
+                                                    src="./assets/img/affiche_maesstro.jpg"
+                                                    alt="Maestro(s)"
+                                                />
+                                                <figcaption
+                                                    class="slider-figure-meta"
+                                                >
+                                                    <p>Séances</p>
+                                                    <p>Bande-annonce</p>
+                                                </figcaption>
+                                            </figure>
+                                            <div class="meta">
+                                                <p class="meta-title">
+                                                    Maestro(s)
+                                                </p>
+                                                <p class="light">
+                                                    De Bruno Chiche
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="slider-item">
+                                        <a href="#">
+                                            <figure>
+                                                <img
+                                                    src="./assets/img/affiche_le_royaume_des_etoiles.jpg"
+                                                    alt="Le Royaume des étoiles"
+                                                />
+                                                <figcaption
+                                                    class="slider-figure-meta"
+                                                >
+                                                    <p>Séances</p>
+                                                    <p>Bande-annonce</p>
+                                                </figcaption>
+                                            </figure>
+                                            <div class="meta">
+                                                <p class="meta-title">
+                                                    Le Royaume des étoiles
+                                                </p>
+                                                <p class="light">
+                                                    De Ali Samadi Ahadi
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="slider-item">
+                                        <a href="#">
+                                            <figure>
+                                                <img
+                                                    src="./assets/img/affiche_le_royaume_des_etoiles.jpg"
+                                                    alt="Le Royaume des étoiles"
+                                                />
+                                                <figcaption
+                                                    class="slider-figure-meta"
+                                                >
+                                                    <p>Séances</p>
+                                                    <p>Bande-annonce</p>
+                                                </figcaption>
+                                            </figure>
+                                            <div class="meta">
+                                                <p class="meta-title">
+                                                    Le Royaume des étoiles
+                                                </p>
+                                                <p class="light">
+                                                    De Ali Samadi Ahadi
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section>
+                            <div class="title_bar">
+                                <h3><a href="#">Toujours à l'affiche</a></h3>
+                            </div>
+                            <div class="slider-container">
+                                <div class="slider-indicator">
+                                    <button
+                                        class="chevron-left"
+                                        onclick="slide_left(1,'toujours_a_l_affiche')"
+                                    >
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </button>
+                                    <button
+                                        class="chevron-right active"
+                                        onclick="slide_right(1,'toujours_a_l_affiche')"
+                                    >
+                                        <i
+                                            class="fa-solid fa-chevron-right"
+                                        ></i>
+                                    </button>
+                                </div>
+                                <div
+                                    class="slider grid"
+                                    id="toujours_a_l_affiche"
+                                    onscroll="slide_scroll(1, this.id)"
+                                >
+                                    <div class="slider-item">
+                                        <a href="#">
+                                            <figure>
+                                                <img
+                                                    src="./assets/img/affiche_wakanda_forever.jpg"
+                                                    alt="Black Panther: Wakanda Forever"
+                                                />
+                                                <figcaption
+                                                    class="slider-figure-meta"
+                                                >
+                                                    <p>Séances</p>
+                                                    <p>Bande-annonce</p>
+                                                </figcaption>
+                                            </figure>
+                                            <div class="meta">
+                                                <p class="meta-title">
+                                                    Black Panther: Wakanda
+                                                    Forever
+                                                </p>
+                                                <p class="light">
+                                                    De Ryan Coogler
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="slider-item">
+                                        <a href="#">
+                                            <figure>
+                                                <img
+                                                    src="./assets/img/affiche_reste_un_peu.jpg"
+                                                    alt="Reste un peu"
+                                                />
+                                                <figcaption
+                                                    class="slider-figure-meta"
+                                                >
+                                                    <p>Séances</p>
+                                                    <p>Bande-annonce</p>
+                                                </figcaption>
+                                            </figure>
+                                            <div class="meta">
+                                                <p class="meta-title">
+                                                    Reste un peu
+                                                </p>
+                                                <p class="light">
+                                                    De Gad Elmaleh
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="slider-item">
+                                        <a href="#">
+                                            <figure>
+                                                <img
+                                                    src="./assets/img/le_torrent.jpg"
+                                                    alt="Le Torrent"
+                                                />
+                                                <figcaption
+                                                    class="slider-figure-meta"
+                                                >
+                                                    <p>Séances</p>
+                                                    <p>Bande-annonce</p>
+                                                </figcaption>
+                                            </figure>
+                                            <div class="meta">
+                                                <p class="meta-title">
+                                                    Le Torrent
+                                                </p>
+                                                <p class="light">
+                                                    De Anne Le Ny
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="slider-item">
+                                        <a href="#">
+                                            <figure>
+                                                <img
+                                                    src="./assets/img/affiche_samhain.jpg"
+                                                    alt="Samhain"
+                                                />
+                                                <figcaption
+                                                    class="slider-figure-meta"
+                                                >
+                                                    <p>Séances</p>
+                                                    <p>Bande-annonce</p>
+                                                </figcaption>
+                                            </figure>
+                                            <div class="meta">
+                                                <p class="meta-title">
+                                                    Samhain
+                                                </p>
+                                                <p class="light">
+                                                    De Kate Dolan
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                     </div>
-                    <div class="slider-container">
-                        <div class="slider-indicator">
-                            <button
-                                class="chevron-left"
-                                onclick="slide_left(0,'sortie_de_la_semaine')"
-                            >
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </button>
-                            <button
-                                class="chevron-right active"
-                                onclick="slide_right(0,'sortie_de_la_semaine')"
-                            >
-                                <i class="fa-solid fa-chevron-right"></i>
-                            </button>
+                    <section>
+                        <div class="title_bar">
+                            <h3><a href="#">Prochainement</a></h3>
+                            <p class="light">
+                                Classement des films les plus consultés hier
+                            </p>
                         </div>
-                        <div
-                            class="slider grid"
-                            id="sortie_de_la_semaine"
-                            onscroll="slide_scroll(0, this.id)"
-                        >
-                            <div class="slider-item">
-                                <a href="#">
-                                    <figure>
+                        <ul class="list_movie">
+                            <li>
+                                <figure>
+                                    <a
+                                        href="/video/player_gen_cmedia=19598190&amp;cfilm=277362.html"
+                                    >
                                         <img
-                                            src="./assets/img/croco.jpg"
-                                            alt="Enzo le Croco"
+                                            class="list_movie-img"
+                                            src="https://fr.web.img6.acsta.net/c_120_160/pictures/22/11/29/08/39/3570477.jpg"
+                                            alt="Knock at the Cabin"
                                         />
-                                        <figcaption class="slider-figure-meta">
-                                            <p>Séances</p>
-                                            <p>Bande-annonce</p>
-                                        </figcaption>
-                                    </figure>
-                                    <div class="meta">
-                                        <p class="meta-title">Enzo le Croco</p>
-                                        <p class="light">
-                                            De Will Speck, Josh Gordon
-                                        </p>
+                                        <span class="player_video-movie"
+                                            ><i class="fa-solid fa-play"></i
+                                        ></span>
+                                    </a>
+                                </figure>
+                                <div class="meta">
+                                    <div class="meta-title">
+                                        <a
+                                            href="/film/fichefilm_gen_cfilm=277362.html"
+                                        >
+                                            Knock at the Cabin
+                                        </a>
+                                        <div class="light">1 février 2023</div>
                                     </div>
-                                </a>
-                            </div>
-                            <div class="slider-item">
-                                <a href="#">
-                                    <figure>
-                                        <img
-                                            src="./assets/img/affiche_chat_potte2.jpg"
-                                            alt="Le Chat Potté 2 : la dernière quête"
-                                        />
-                                        <figcaption class="slider-figure-meta">
-                                            <p>Séances</p>
-                                            <p>Bande-annonce</p>
-                                        </figcaption>
-                                    </figure>
-                                    <div class="meta">
-                                        <p class="meta-title">
-                                            Le Chat Potté 2 : la dernière quête
-                                        </p>
-                                        <p class="light">
-                                            De Januel P. Mercado, Joel Crawford
-                                        </p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="slider-item">
-                                <a href="#">
-                                    <figure>
-                                        <img
-                                            src="./assets/img/affiche_maesstro.jpg"
-                                            alt="Maestro(s)"
-                                        />
-                                        <figcaption class="slider-figure-meta">
-                                            <p>Séances</p>
-                                            <p>Bande-annonce</p>
-                                        </figcaption>
-                                    </figure>
-                                    <div class="meta">
-                                        <p class="meta-title">Maestro(s)</p>
-                                        <p class="light">De Bruno Chiche</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="slider-item">
-                                <a href="#">
-                                    <figure>
-                                        <img
-                                            src="./assets/img/affiche_le_royaume_des_etoiles.jpg"
-                                            alt="Le Royaume des étoiles"
-                                        />
-                                        <figcaption class="slider-figure-meta">
-                                            <p>Séances</p>
-                                            <p>Bande-annonce</p>
-                                        </figcaption>
-                                    </figure>
-                                    <div class="meta">
-                                        <p class="meta-title">
-                                            Le Royaume des étoiles
-                                        </p>
-                                        <p class="light">De Ali Samadi Ahadi</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <div class="title_bar">
-                        <h3><a href="#">Toujours à l'affiche</a></h3>
-                    </div>
-                    <div class="slider-container">
-                        <div class="slider-indicator">
-                            <button
-                                class="chevron-left"
-                                onclick="slide_left(1,'toujours_a_l_affiche')"
-                            >
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </button>
-                            <button
-                                class="chevron-right active"
-                                onclick="slide_right(1,'toujours_a_l_affiche')"
-                            >
-                                <i class="fa-solid fa-chevron-right"></i>
-                            </button>
-                        </div>
-                        <div
-                            class="slider grid"
-                            id="toujours_a_l_affiche"
-                            onscroll="slide_scroll(1, this.id)"
-                        >
-                            <div class="slider-item">
-                                <a href="#">
-                                    <figure>
-                                        <img
-                                            src="./assets/img/affiche_wakanda_forever.jpg"
-                                            alt="Black Panther: Wakanda Forever"
-                                        />
-                                        <figcaption class="slider-figure-meta">
-                                            <p>Séances</p>
-                                            <p>Bande-annonce</p>
-                                        </figcaption>
-                                    </figure>
-                                    <div class="meta">
-                                        <p class="meta-title">
-                                            Black Panther: Wakanda Forever
-                                        </p>
-                                        <p class="light">De Ryan Coogler</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="slider-item">
-                                <a href="#">
-                                    <figure>
-                                        <img
-                                            src="./assets/img/affiche_reste_un_peu.jpg"
-                                            alt="Reste un peu"
-                                        />
-                                        <figcaption class="slider-figure-meta">
-                                            <p>Séances</p>
-                                            <p>Bande-annonce</p>
-                                        </figcaption>
-                                    </figure>
-                                    <div class="meta">
-                                        <p class="meta-title">Reste un peu</p>
-                                        <p class="light">De Gad Elmaleh</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="slider-item">
-                                <a href="#">
-                                    <figure>
-                                        <img
-                                            src="./assets/img/le_torrent.jpg"
-                                            alt="Le Torrent"
-                                        />
-                                        <figcaption class="slider-figure-meta">
-                                            <p>Séances</p>
-                                            <p>Bande-annonce</p>
-                                        </figcaption>
-                                    </figure>
-                                    <div class="meta">
-                                        <p class="meta-title">Le Torrent</p>
-                                        <p class="light">De Anne Le Ny</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="slider-item">
-                                <a href="#">
-                                    <figure>
-                                        <img
-                                            src="./assets/img/affiche_samhain.jpg"
-                                            alt="Samhain"
-                                        />
-                                        <figcaption class="slider-figure-meta">
-                                            <p>Séances</p>
-                                            <p>Bande-annonce</p>
-                                        </figcaption>
-                                    </figure>
-                                    <div class="meta">
-                                        <p class="meta-title">Samhain</p>
-                                        <p class="light">De Kate Dolan</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <div class="title_bar">
-                        <h3><a href="#">Prochainement</a></h3>
-                        <p class="light">
-                            Classement des films les plus consultés hier
-                        </p>
-                    </div>
-                    <ul class="list_movie">
-                        <li>
-                            <div class="meta">
-                                <a href="#" class="meta-title">
-                                    Les Huit Montagnes
-                                </a>
-                                <p class="light">21 décembre 2022</p>
-                            </div>
-                            <div class="list_movie-right">
-                                <span>en salle</span>
-                                <a href="#"
-                                    ><i class="fa-regular fa-circle-play"></i
-                                ></a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="meta">
-                                <a href="#" class="meta-title">
-                                    Avatar : la voie de l'eau
-                                </a>
-                                <p class="light">14 décembre 2022</p>
-                            </div>
-                            <div class="list_movie-right">
-                                <span>en salle</span>
-                                <a href="#"
-                                    ><i class="fa-regular fa-circle-play"></i
-                                ></a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="meta">
-                                <a href="#" class="meta-title"> Corsage </a>
-                                <p class="light">14 décembre 2022</p>
-                            </div>
-                            <div class="list_movie-right">
-                                <span>en salle</span>
-                                <a href="#"
-                                    ><i class="fa-regular fa-circle-play"></i
-                                ></a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="meta">
-                                <a href="#" class="meta-title">
-                                    La Guerre des Lulus
-                                </a>
-                                <p class="light">18 janvier 2023</p>
-                            </div>
-                            <div class="list_movie-right">
-                                <span>en salle</span>
-                                <a href="#"
-                                    ><i class="fa-regular fa-circle-play"></i
-                                ></a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="meta">
-                                <a href="#" class="meta-title">
-                                    Stella est amoureuse
-                                </a>
-                                <p class="light">14 décembre 2022</p>
-                            </div>
-                            <div class="list_movie-right">
-                                <span>en salle</span>
-                                <a href="#"
-                                    ><i class="fa-regular fa-circle-play"></i
-                                ></a>
-                            </div>
-                        </li>
-                    </ul>
-                </section>
+                                </div>
+                                <div class="list_movie-right">
+                                    <span>en salle</span>
+                                    <a href="#"
+                                        ><i
+                                            class="fa-regular fa-circle-play"
+                                        ></i
+                                    ></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="meta">
+                                    <a href="#" class="meta-title">
+                                        Les Huit Montagnes
+                                    </a>
+                                    <p class="light">21 décembre 2022</p>
+                                </div>
+                                <div class="list_movie-right">
+                                    <span>en salle</span>
+                                    <a href="#"
+                                        ><i
+                                            class="fa-regular fa-circle-play"
+                                        ></i
+                                    ></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="meta">
+                                    <a href="#" class="meta-title">
+                                        Avatar : la voie de l'eau
+                                    </a>
+                                    <p class="light">14 décembre 2022</p>
+                                </div>
+                                <div class="list_movie-right">
+                                    <span>en salle</span>
+                                    <a href="#"
+                                        ><i
+                                            class="fa-regular fa-circle-play"
+                                        ></i
+                                    ></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="meta">
+                                    <a href="#" class="meta-title"> Corsage </a>
+                                    <p class="light">14 décembre 2022</p>
+                                </div>
+                                <div class="list_movie-right">
+                                    <span>en salle</span>
+                                    <a href="#"
+                                        ><i
+                                            class="fa-regular fa-circle-play"
+                                        ></i
+                                    ></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="meta">
+                                    <a href="#" class="meta-title">
+                                        La Guerre des Lulus
+                                    </a>
+                                    <p class="light">18 janvier 2023</p>
+                                </div>
+                                <div class="list_movie-right">
+                                    <span>en salle</span>
+                                    <a href="#"
+                                        ><i
+                                            class="fa-regular fa-circle-play"
+                                        ></i
+                                    ></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="meta">
+                                    <a href="#" class="meta-title">
+                                        Stella est amoureuse
+                                    </a>
+                                    <p class="light">14 décembre 2022</p>
+                                </div>
+                                <div class="list_movie-right">
+                                    <span>en salle</span>
+                                    <a href="#"
+                                        ><i
+                                            class="fa-regular fa-circle-play"
+                                        ></i
+                                    ></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
                 <section>
                     <div class="title_bar">
                         <h3>
@@ -380,6 +535,12 @@
                             </div>
                         </div>
                         <div class="news-item">
+                            <figure>
+                                <img
+                                    src="./assets/img/news_idee_cadeaux.jpg"
+                                    alt=""
+                                />
+                            </figure>
                             <div class="meta">
                                 <p class="meta-category">NEWS - Streaming</p>
                                 <a href="#" class="meta-title">
@@ -389,6 +550,12 @@
                             </div>
                         </div>
                         <div class="news-item">
+                            <figure>
+                                <img
+                                    src="./assets/img/news_idee_cadeaux.jpg"
+                                    alt=""
+                                />
+                            </figure>
                             <div class="meta">
                                 <p class="meta-category">NEWS - Streaming</p>
                                 <a href="#" class="meta-title">
@@ -399,6 +566,12 @@
                             </div>
                         </div>
                         <div class="news-item">
+                            <figure>
+                                <img
+                                    src="./assets/img/news_idee_cadeaux.jpg"
+                                    alt=""
+                                />
+                            </figure>
                             <div class="meta">
                                 <p class="meta-category">NEWS - Sorties ciné</p>
                                 <a href="#" class="meta-title">
@@ -408,6 +581,12 @@
                             </div>
                         </div>
                         <div class="news-item">
+                            <figure>
+                                <img
+                                    src="./assets/img/news_idee_cadeaux.jpg"
+                                    alt=""
+                                />
+                            </figure>
                             <div class="meta">
                                 <p class="meta-category">NEWS - Streaming</p>
                                 <a href="#" class="meta-title">
@@ -419,6 +598,12 @@
                             </div>
                         </div>
                         <div class="news-item">
+                            <figure>
+                                <img
+                                    src="./assets/img/news_idee_cadeaux.jpg"
+                                    alt=""
+                                />
+                            </figure>
                             <div class="meta">
                                 <p class="meta-category">NEWS - Streaming</p>
                                 <a href="#" class="meta-title">
@@ -428,6 +613,12 @@
                             </div>
                         </div>
                         <div class="news-item">
+                            <figure>
+                                <img
+                                    src="./assets/img/news_idee_cadeaux.jpg"
+                                    alt=""
+                                />
+                            </figure>
                             <div class="meta">
                                 <p class="meta-category">NEWS - Streaming</p>
                                 <a href="#" class="meta-title">
@@ -438,6 +629,12 @@
                             </div>
                         </div>
                         <div class="news-item">
+                            <figure>
+                                <img
+                                    src="./assets/img/news_idee_cadeaux.jpg"
+                                    alt=""
+                                />
+                            </figure>
                             <div class="meta">
                                 <p class="meta-category">NEWS - Streaming</p>
                                 <a href="#" class="meta-title">
@@ -448,6 +645,12 @@
                             </div>
                         </div>
                         <div class="news-item">
+                            <figure>
+                                <img
+                                    src="./assets/img/news_idee_cadeaux.jpg"
+                                    alt=""
+                                />
+                            </figure>
                             <div class="meta">
                                 <p class="meta-category">NEWS - Sorties ciné</p>
                                 <a href="#" class="meta-title">
@@ -464,95 +667,103 @@
                             <a href="#">Bandes-annonces à ne pas manquer</a>
                         </h3>
                     </div>
-                    <div class="video_card">
-                        <figure>
-                            <img
-                                src="./assets/img/amant_de_chatterley.jpg"
-                                alt="L'Amant de Lady Chatterley"
-                            />
-                            <span class="player_video"
-                                ><i class="fa-solid fa-play"></i
-                            ></span>
-                        </figure>
-                        <div class="video_card-info">
-                            <img
-                                src="./assets/img/affiche_amant_de_etc.jpg"
-                                alt="affiche les gardiens de la galaxie"
-                            />
-                            <div class="meta">
-                                <p class="meta-title">
-                                    L'Amant de Lady Chatterley
-                                </p>
-                                <p>
-                                    L'Amant de Lady Chatterley Bande-annonce VF
-                                </p>
+                    <div class="bd-container grid">
+                        <div>
+                            <div class="video_card">
+                                <figure>
+                                    <img
+                                        src="./assets/img/amant_de_chatterley.jpg"
+                                        alt="L'Amant de Lady Chatterley"
+                                    />
+                                    <span class="player_video"
+                                        ><i class="fa-solid fa-play"></i
+                                    ></span>
+                                </figure>
+                                <div class="video_card-info">
+                                    <img
+                                        src="./assets/img/affiche_amant_de_etc.jpg"
+                                        alt="affiche les gardiens de la galaxie"
+                                    />
+                                    <div class="meta">
+                                        <p class="meta-title">
+                                            L'Amant de Lady Chatterley
+                                        </p>
+                                        <p>
+                                            L'Amant de Lady Chatterley
+                                            Bande-annonce VF
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="bande_annonces grid">
-                        <div class="video_card">
-                            <a href="#">
-                                <figure>
-                                    <img
-                                        src="https://fr.web.img2.acsta.net/c_150_200/pictures/22/11/17/11/47/3561503.jpg"
-                                        alt="La Guerre des Lulus Bande-annonce VF"
-                                    />
-                                    <span class="player_video"
-                                        ><i class="fa-solid fa-play"></i
-                                    ></span>
-                                    <figcaption class="meta-name">
-                                        La Guerre des Lulus Bande-annonce VF
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="video_card">
-                            <a href="#">
-                                <figure>
-                                    <img
-                                        src="https://fr.web.img5.acsta.net/c_150_200/pictures/22/11/16/14/37/3945457.jpg"
-                                        alt="Les Huit Montagnes Bande-annonce VO"
-                                    />
-                                    <span class="player_video"
-                                        ><i class="fa-solid fa-play"></i
-                                    ></span>
-                                    <figcaption class="meta-name">
-                                        Les Huit Montagnes Bande-annonce VO
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="video_card">
-                            <a href="#">
-                                <figure>
-                                    <img
-                                        src="https://fr.web.img2.acsta.net/c_150_200/pictures/22/11/04/14/38/1746132.jpg"
-                                        alt="Falcon Lake Teaser VF"
-                                    />
-                                    <span class="player_video"
-                                        ><i class="fa-solid fa-play"></i
-                                    ></span>
-                                    <figcaption class="meta-name">
-                                        Falcon Lake Teaser VF
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="video_card">
-                            <a href="#">
-                                <figure>
-                                    <img
-                                        src="https://fr.web.img2.acsta.net/c_150_200/medias/nmedia/18/73/93/69/19221867.jpg"
-                                        alt="The Fantastic Four Bande-annonce VO"
-                                    />
-                                    <span class="player_video"
-                                        ><i class="fa-solid fa-play"></i
-                                    ></span>
-                                    <figcaption class="meta-name">
-                                        The Fantastic Four Bande-annonce VO
-                                    </figcaption>
-                                </figure>
-                            </a>
+                            <div class="bande_annonces grid">
+                                <div class="video_card">
+                                    <a href="#">
+                                        <figure>
+                                            <img
+                                                src="https://fr.web.img2.acsta.net/c_150_200/pictures/22/11/17/11/47/3561503.jpg"
+                                                alt="La Guerre des Lulus Bande-annonce VF"
+                                            />
+                                            <span class="player_video"
+                                                ><i class="fa-solid fa-play"></i
+                                            ></span>
+                                            <figcaption class="meta-name">
+                                                La Guerre des Lulus
+                                                Bande-annonce VF
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                                <div class="video_card">
+                                    <a href="#">
+                                        <figure>
+                                            <img
+                                                src="https://fr.web.img5.acsta.net/c_150_200/pictures/22/11/16/14/37/3945457.jpg"
+                                                alt="Les Huit Montagnes Bande-annonce VO"
+                                            />
+                                            <span class="player_video"
+                                                ><i class="fa-solid fa-play"></i
+                                            ></span>
+                                            <figcaption class="meta-name">
+                                                Les Huit Montagnes Bande-annonce
+                                                VO
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                                <div class="video_card">
+                                    <a href="#">
+                                        <figure>
+                                            <img
+                                                src="https://fr.web.img2.acsta.net/c_150_200/pictures/22/11/04/14/38/1746132.jpg"
+                                                alt="Falcon Lake Teaser VF"
+                                            />
+                                            <span class="player_video"
+                                                ><i class="fa-solid fa-play"></i
+                                            ></span>
+                                            <figcaption class="meta-name">
+                                                Falcon Lake Teaser VF
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                                <div class="video_card">
+                                    <a href="#">
+                                        <figure>
+                                            <img
+                                                src="https://fr.web.img2.acsta.net/c_150_200/medias/nmedia/18/73/93/69/19221867.jpg"
+                                                alt="The Fantastic Four Bande-annonce VO"
+                                            />
+                                            <span class="player_video"
+                                                ><i class="fa-solid fa-play"></i
+                                            ></span>
+                                            <figcaption class="meta-name">
+                                                The Fantastic Four Bande-annonce
+                                                VO
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -627,157 +838,171 @@
                         </div>
                     </div>
                 </section>
-                <section>
-                    <div class="title_bar">
-                        <h3>
-                            <a href="#">Bandes-annonces streaming</a>
-                        </h3>
-                    </div>
-                    <div class="video_card">
-                        <figure>
-                            <img
-                                src="./assets/img/les_gardiens_de_la_galaxie.jpg"
-                                alt="les gardiens de la galaxie"
-                            />
-                            <span class="player_video"
-                                ><i class="fa-solid fa-play"></i
-                            ></span>
-                        </figure>
-                        <div class="video_card-info">
-                            <img
-                                src="./assets/img/affiche_les_gardiens.jpg"
-                                alt="affiche les gardiens de la galaxie"
-                            />
-                            <div class="meta">
-                                <p class="meta-title">
-                                    Les Gardiens de la galaxie : Joyeuses fêtes
-                                </p>
-                                <p>
-                                    Les Gardiens de la galaxie : Joyeuses fêtes
-                                    Bande-annonce VO
-                                </p>
-                            </div>
+                <div class="svod-container grid">
+                    <section>
+                        <div class="title_bar">
+                            <h3>
+                                <a href="#">Bandes-annonces streaming</a>
+                            </h3>
                         </div>
-                    </div>
-                    <div class="bande_annonces grid">
-                        <div class="video_card">
-                            <a href="#">
+                        <div>
+                            <div class="video_card">
                                 <figure>
                                     <img
-                                        src="./assets/img/affiche_overdose.jpg"
-                                        alt="Overdose Bande-annonce VF"
+                                        src="./assets/img/les_gardiens_de_la_galaxie.jpg"
+                                        alt="les gardiens de la galaxie"
                                     />
                                     <span class="player_video"
                                         ><i class="fa-solid fa-play"></i
                                     ></span>
-                                    <figcaption class="meta-name">
-                                        Overdose Bande-annonce VF
-                                    </figcaption>
                                 </figure>
-                            </a>
+                                <div class="video_card-info">
+                                    <img
+                                        src="./assets/img/affiche_les_gardiens.jpg"
+                                        alt="affiche les gardiens de la galaxie"
+                                    />
+                                    <div class="meta">
+                                        <p class="meta-title">
+                                            Les Gardiens de la galaxie :
+                                            Joyeuses fêtes
+                                        </p>
+                                        <p>
+                                            Les Gardiens de la galaxie :
+                                            Joyeuses fêtes Bande-annonce VO
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bande_annonces grid">
+                                <div class="video_card">
+                                    <a href="#">
+                                        <figure>
+                                            <img
+                                                src="./assets/img/affiche_overdose.jpg"
+                                                alt="Overdose Bande-annonce VF"
+                                            />
+                                            <span class="player_video"
+                                                ><i class="fa-solid fa-play"></i
+                                            ></span>
+                                            <figcaption class="meta-name">
+                                                Overdose Bande-annonce VF
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                                <div class="video_card">
+                                    <a href="#">
+                                        <figure>
+                                            <img
+                                                src="./assets/img/affiche_assassin.jpg"
+                                                alt="Assassin(s) Bande-annonce VO"
+                                            />
+                                            <span class="player_video"
+                                                ><i class="fa-solid fa-play"></i
+                                            ></span>
+                                            <figcaption class="meta-name">
+                                                Assassin(s) Bande-annonce VO
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                                <div class="video_card">
+                                    <a href="#">
+                                        <figure>
+                                            <img
+                                                src="./assets/img/affiche_troll.jpg"
+                                                alt="Troll Bande-annonce VO"
+                                            />
+                                            <span class="player_video"
+                                                ><i class="fa-solid fa-play"></i
+                                            ></span>
+                                            <figcaption class="meta-name">
+                                                Troll Bande-annonce VO
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                                <div class="video_card">
+                                    <a href="#">
+                                        <figure>
+                                            <img
+                                                src="./assets/img/affiche_le_patient.jpg"
+                                                alt="Le Patient Bande-annonce VF"
+                                            />
+                                            <span class="player_video"
+                                                ><i class="fa-solid fa-play"></i
+                                            ></span>
+                                            <figcaption class="meta-name">
+                                                Le Patient Bande-annonce VF
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="video_card">
-                            <a href="#">
+                    </section>
+                    <section>
+                        <div class="title_bar">
+                            <h3>
+                                <a href="#">L'actu streaming</a>
+                            </h3>
+                        </div>
+                        <div class="news actu_stream grid">
+                            <div class="news-item">
                                 <figure>
                                     <img
-                                        src="./assets/img/affiche_assassin.jpg"
-                                        alt="Assassin(s) Bande-annonce VO"
+                                        src="./assets/img/im_actu_streaming.jpg"
+                                        alt=""
                                     />
-                                    <span class="player_video"
-                                        ><i class="fa-solid fa-play"></i
-                                    ></span>
-                                    <figcaption class="meta-name">
-                                        Assassin(s) Bande-annonce VO
-                                    </figcaption>
                                 </figure>
-                            </a>
-                        </div>
-                        <div class="video_card">
-                            <a href="#">
-                                <figure>
-                                    <img
-                                        src="./assets/img/affiche_troll.jpg"
-                                        alt="Troll Bande-annonce VO"
-                                    />
-                                    <span class="player_video"
-                                        ><i class="fa-solid fa-play"></i
-                                    ></span>
-                                    <figcaption class="meta-name">
-                                        Troll Bande-annonce VO
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="video_card">
-                            <a href="#">
-                                <figure>
-                                    <img
-                                        src="./assets/img/affiche_le_patient.jpg"
-                                        alt="Le Patient Bande-annonce VF"
-                                    />
-                                    <span class="player_video"
-                                        ><i class="fa-solid fa-play"></i
-                                    ></span>
-                                    <figcaption class="meta-name">
-                                        Le Patient Bande-annonce VF
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <div class="title_bar">
-                        <h3>
-                            <a href="#">L'actu streaming</a>
-                        </h3>
-                    </div>
-                    <div class="news grid">
-                        <div class="news-item">
-                            <figure>
-                                <img
-                                    src="./assets/img/im_actu_streaming.jpg"
-                                    alt=""
-                                />
-                            </figure>
-                            <div class="meta">
-                                <p class="meta-category">NEWS - Streaming</p>
-                                <a href="#" class="meta-title">
-                                    Mercredi sur Netflix : Lady Gaga refait la
-                                    célèbre danse de Jenna Ortega
-                                </a>
+                                <div class="meta">
+                                    <p class="meta-category">
+                                        NEWS - Streaming
+                                    </p>
+                                    <a href="#" class="meta-title">
+                                        Mercredi sur Netflix : Lady Gaga refait
+                                        la célèbre danse de Jenna Ortega
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="news-item">
+                                <div class="meta">
+                                    <p class="meta-category">
+                                        NEWS - Streaming
+                                    </p>
+                                    <a href="#" class="meta-title">
+                                        Harry et Meghan sur Netflix : les médias
+                                        anglais détestent le documentaire mais
+                                        les abonnés sont ravis
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="news-item">
+                                <div class="meta">
+                                    <p class="meta-category">
+                                        NEWS - Streaming
+                                    </p>
+                                    <a href="#" class="meta-title">
+                                        Flop au cinéma, ce roman de SF jugé
+                                        inadaptable sera bientôt une série !
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="news-item">
+                                <div class="meta">
+                                    <p class="meta-category">
+                                        NEWS - Sorties ciné
+                                    </p>
+                                    <a href="#" class="meta-title">
+                                        Nouveautés Netflix : un célèbre
+                                        personnage de jeux vidéo déboule sur la
+                                        plateforme
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                        <div class="news-item">
-                            <div class="meta">
-                                <p class="meta-category">NEWS - Streaming</p>
-                                <a href="#" class="meta-title">
-                                    Harry et Meghan sur Netflix : les médias
-                                    anglais détestent le documentaire mais les
-                                    abonnés sont ravis
-                                </a>
-                            </div>
-                        </div>
-                        <div class="news-item">
-                            <div class="meta">
-                                <p class="meta-category">NEWS - Streaming</p>
-                                <a href="#" class="meta-title">
-                                    Flop au cinéma, ce roman de SF jugé
-                                    inadaptable sera bientôt une série !
-                                </a>
-                            </div>
-                        </div>
-                        <div class="news-item">
-                            <div class="meta">
-                                <p class="meta-category">NEWS - Sorties ciné</p>
-                                <a href="#" class="meta-title">
-                                    Nouveautés Netflix : un célèbre personnage
-                                    de jeux vidéo déboule sur la plateforme
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                    </section>
+                </div>
                 <section>
                     <div class="title_bar">
                         <h3>
@@ -1035,276 +1260,320 @@
             </article>
             <article>
                 <h2>Séries</h2>
-                <section>
-                    <div class="title_bar">
-                        <h3><a href="#">Top séries de la semaine</a></h3>
+                <div class="serie-container grid">
+                    <div>
+                        <section>
+                            <div class="title_bar">
+                                <h3>
+                                    <a href="#">Top séries de la semaine</a>
+                                </h3>
+                            </div>
+                            <div class="card-container grid">
+                                <div class="card-item">
+                                    <a href="#">
+                                        <figure>
+                                            <img
+                                                src="./assets/img/affiche_mercredi.jpg"
+                                                alt="Mercredi"
+                                            />
+                                            <figcaption class="number">
+                                                1
+                                            </figcaption>
+                                        </figure>
+                                        <div class="meta">
+                                            <p class="meta-title">Mercredi</p>
+                                            <p class="light">
+                                                Comédie, Fantastique, Policier
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card-item">
+                                    <a href="#">
+                                        <figure>
+                                            <img
+                                                src="./assets/img/affiche_1899.jpg"
+                                                alt="1899"
+                                            />
+                                            <figcaption class="number">
+                                                2
+                                            </figcaption>
+                                        </figure>
+                                        <div class="meta">
+                                            <p class="meta-title">1899</p>
+                                            <p class="light">
+                                                Drame, Epouvante-horreur,
+                                                Thriller
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card-item">
+                                    <a href="#">
+                                        <figure>
+                                            <img
+                                                src="./assets/img/affiche_rogue.jpg"
+                                                alt="Rogue Heroes"
+                                            />
+                                            <figcaption class="number">
+                                                3
+                                            </figcaption>
+                                        </figure>
+                                        <div class="meta">
+                                            <p class="meta-title">
+                                                Rogue Heroes
+                                            </p>
+                                            <p class="light">
+                                                Drame, Guerre, Historique,
+                                                Action
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card-item">
+                                    <a href="#">
+                                        <figure>
+                                            <img
+                                                src="./assets/img/affiche_willow.jpg"
+                                                alt="Willow"
+                                            />
+                                            <figcaption class="number">
+                                                4
+                                            </figcaption>
+                                        </figure>
+                                        <div class="meta">
+                                            <p class="meta-title">Willow</p>
+                                            <p class="light">
+                                                Aventure, Fantastique
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </section>
+                        <section>
+                            <div class="title_bar">
+                                <h3>
+                                    <a href="#"
+                                        >les séries les plus attendues</a
+                                    >
+                                </h3>
+                            </div>
+                            <div class="card-container grid">
+                                <div class="card-item">
+                                    <a href="#">
+                                        <figure>
+                                            <img
+                                                src="./assets/img/affiche_tresors_perdu.jpg"
+                                                alt="Trésors perdus : le secret de Montezuma"
+                                            />
+                                        </figure>
+                                        <div class="meta">
+                                            <p class="meta-title">
+                                                Trésors perdus : le secret de
+                                                Montezuma
+                                            </p>
+                                            <p class="light">Aventure</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card-item">
+                                    <a href="#">
+                                        <figure>
+                                            <img
+                                                src="./assets/img/affiche_the_last_etc.jpg"
+                                                alt="The Last Of Us"
+                                            />
+                                        </figure>
+                                        <div class="meta">
+                                            <p class="meta-title">
+                                                The Last Of Us
+                                            </p>
+                                            <p class="light">
+                                                Aventure, Epouvante-horreur,
+                                                Action
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card-item">
+                                    <a href="#">
+                                        <figure>
+                                            <img
+                                                src="./assets/img/affiche_septieme_ciel.jpg"
+                                                alt="Septième Ciel"
+                                            />
+                                        </figure>
+                                        <div class="meta">
+                                            <p class="meta-title">
+                                                Septième Ciel
+                                            </p>
+                                            <p class="light">
+                                                Comédie dramatique
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card-item">
+                                    <a href="#">
+                                        <figure>
+                                            <img
+                                                src="./assets/img/affiche_wolfpack.jpg"
+                                                alt="Wolf Pack"
+                                            />
+                                        </figure>
+                                        <div class="meta">
+                                            <p class="meta-title">Wolf Pack</p>
+                                            <p class="light">
+                                                Comédie, Drame, Fantastique
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </section>
                     </div>
-                    <div class="card-container grid">
-                        <div class="card-item">
-                            <a href="#">
+                    <section>
+                        <div class="title_bar">
+                            <h3>
+                                <a href="#">L'actu séries</a>
+                            </h3>
+                        </div>
+                        <div class="news actu_stream grid">
+                            <div class="news-item">
                                 <figure>
                                     <img
-                                        src="./assets/img/affiche_mercredi.jpg"
-                                        alt="Mercredi"
+                                        src="./assets/img/actu_plus_bellevie.jpg"
+                                        alt=""
                                     />
-                                    <figcaption class="number">1</figcaption>
                                 </figure>
                                 <div class="meta">
-                                    <p class="meta-title">Mercredi</p>
-                                    <p class="light">
-                                        Comédie, Fantastique, Policier
+                                    <p class="meta-category">
+                                        NEWS - Séries à la TV
                                     </p>
+                                    <a href="#" class="meta-title">
+                                        Plus belle la vie : la voiture de Boher
+                                        va être mise aux enchères
+                                    </a>
                                 </div>
-                            </a>
-                        </div>
-                        <div class="card-item">
-                            <a href="#">
-                                <figure>
-                                    <img
-                                        src="./assets/img/affiche_1899.jpg"
-                                        alt="1899"
-                                    />
-                                    <figcaption class="number">2</figcaption>
-                                </figure>
+                            </div>
+                            <div class="news-item">
                                 <div class="meta">
-                                    <p class="meta-title">1899</p>
-                                    <p class="light">
-                                        Drame, Epouvante-horreur, Thriller
+                                    <p class="meta-category">
+                                        NEWS - Séries à la TV
                                     </p>
+                                    <a href="#" class="meta-title">
+                                        New York Unité Spéciale : un personnage
+                                        phare a fait ses adieux à la série
+                                    </a>
                                 </div>
-                            </a>
-                        </div>
-                        <div class="card-item">
-                            <a href="#">
-                                <figure>
-                                    <img
-                                        src="./assets/img/affiche_rogue.jpg"
-                                        alt="Rogue Heroes"
-                                    />
-                                    <figcaption class="number">3</figcaption>
-                                </figure>
+                            </div>
+                            <div class="news-item">
                                 <div class="meta">
-                                    <p class="meta-title">Rogue Heroes</p>
-                                    <p class="light">
-                                        Drame, Guerre, Historique, Action
+                                    <p class="meta-category">
+                                        NEWS - Streaming
                                     </p>
+                                    <a href="#" class="meta-title">
+                                        Mercredi sur Netflix : Lady Gaga refait
+                                        la célèbre danse de Jenna Ortega
+                                    </a>
                                 </div>
-                            </a>
-                        </div>
-                        <div class="card-item">
-                            <a href="#">
-                                <figure>
-                                    <img
-                                        src="./assets/img/affiche_willow.jpg"
-                                        alt="Willow"
-                                    />
-                                    <figcaption class="number">4</figcaption>
-                                </figure>
+                            </div>
+                            <div class="news-item">
                                 <div class="meta">
-                                    <p class="meta-title">Willow</p>
-                                    <p class="light">Aventure, Fantastique</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <div class="title_bar">
-                        <h3><a href="#">les séries les plus attendues</a></h3>
-                    </div>
-                    <div class="card-container grid">
-                        <div class="card-item">
-                            <a href="#">
-                                <figure>
-                                    <img
-                                        src="./assets/img/affiche_tresors_perdu.jpg"
-                                        alt="Trésors perdus : le secret de Montezuma"
-                                    />
-                                </figure>
-                                <div class="meta">
-                                    <p class="meta-title">
-                                        Trésors perdus : le secret de Montezuma
+                                    <p class="meta-category">
+                                        NEWS - Streaming
                                     </p>
-                                    <p class="light">Aventure</p>
+                                    <a href="#" class="meta-title">
+                                        Harry et Meghan sur Netflix : les médias
+                                        anglais détestent le documentaire mais
+                                        les abonnés sont ravis
+                                    </a>
                                 </div>
-                            </a>
-                        </div>
-                        <div class="card-item">
-                            <a href="#">
-                                <figure>
-                                    <img
-                                        src="./assets/img/affiche_the_last_etc.jpg"
-                                        alt="The Last Of Us"
-                                    />
-                                </figure>
+                            </div>
+                            <div class="news-item">
                                 <div class="meta">
-                                    <p class="meta-title">The Last Of Us</p>
-                                    <p class="light">
-                                        Aventure, Epouvante-horreur, Action
+                                    <p class="meta-category">
+                                        NEWS - Séries à la TV
                                     </p>
+                                    <a href="#" class="meta-title">
+                                        Ici tout commence : Salomé au cœur d'un
+                                        nouveau triangle amoureux avec Thomas et
+                                        Gaëtan ?
+                                    </a>
                                 </div>
-                            </a>
-                        </div>
-                        <div class="card-item">
-                            <a href="#">
-                                <figure>
-                                    <img
-                                        src="./assets/img/affiche_septieme_ciel.jpg"
-                                        alt="Septième Ciel"
-                                    />
-                                </figure>
-                                <div class="meta">
-                                    <p class="meta-title">Septième Ciel</p>
-                                    <p class="light">Comédie dramatique</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="card-item">
-                            <a href="#">
-                                <figure>
-                                    <img
-                                        src="./assets/img/affiche_wolfpack.jpg"
-                                        alt="Wolf Pack"
-                                    />
-                                </figure>
-                                <div class="meta">
-                                    <p class="meta-title">Wolf Pack</p>
-                                    <p class="light">
-                                        Comédie, Drame, Fantastique
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <div class="title_bar">
-                        <h3>
-                            <a href="#">L'actu séries</a>
-                        </h3>
-                    </div>
-                    <div class="news grid">
-                        <div class="news-item">
-                            <figure>
-                                <img
-                                    src="./assets/img/actu_plus_bellevie.jpg"
-                                    alt=""
-                                />
-                            </figure>
-                            <div class="meta">
-                                <p class="meta-category">
-                                    NEWS - Séries à la TV
-                                </p>
-                                <a href="#" class="meta-title">
-                                    Plus belle la vie : la voiture de Boher va
-                                    être mise aux enchères
-                                </a>
                             </div>
                         </div>
-                        <div class="news-item">
-                            <div class="meta">
-                                <p class="meta-category">
-                                    NEWS - Séries à la TV
-                                </p>
-                                <a href="#" class="meta-title">
-                                    New York Unité Spéciale : un personnage
-                                    phare a fait ses adieux à la série
-                                </a>
-                            </div>
-                        </div>
-                        <div class="news-item">
-                            <div class="meta">
-                                <p class="meta-category">NEWS - Streaming</p>
-                                <a href="#" class="meta-title">
-                                    Mercredi sur Netflix : Lady Gaga refait la
-                                    célèbre danse de Jenna Ortega
-                                </a>
-                            </div>
-                        </div>
-                        <div class="news-item">
-                            <div class="meta">
-                                <p class="meta-category">NEWS - Streaming</p>
-                                <a href="#" class="meta-title">
-                                    Harry et Meghan sur Netflix : les médias
-                                    anglais détestent le documentaire mais les
-                                    abonnés sont ravis
-                                </a>
-                            </div>
-                        </div>
-                        <div class="news-item">
-                            <div class="meta">
-                                <p class="meta-category">
-                                    NEWS - Séries à la TV
-                                </p>
-                                <a href="#" class="meta-title">
-                                    Ici tout commence : Salomé au cœur d'un
-                                    nouveau triangle amoureux avec Thomas et
-                                    Gaëtan ?
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                    </section>
+                </div>
             </article>
         </main>
         <footer>
-            <div class="footer-cell">
-                <div class="title">suivez-nous</div>
-                <div class="social_media-container">
-                    <div class="social_media-icon">
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    </div>
-                    <div class="social_media-icon">
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    </div>
-                    <div class="social_media-icon">
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    </div>
-                    <div class="social_media-icon">
-                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-                    </div>
-                    <div class="social_media-icon">
-                        <a href="#"><i class="fa-regular fa-envelope"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-cell">
-                <div class="title">allociné sur mobile</div>
-                <div class="mobile-container">
-                    <div class="mobile-icon">
-                        <a href="#"><i class="fa-brands fa-apple"></i></a>
-                    </div>
-                    <div class="mobile-icon">
-                        <a href="#"
-                            ><img
-                                src="./assets/img/icons8-android-24.png"
-                                alt=""
-                        /></a>
+            <div class="footer-wrapper">
+                <div class="footer-cell">
+                    <div class="title-foot">suivez-nous</div>
+                    <div class="social_media-container">
+                        <div class="social_media-icon">
+                            <a href="#"
+                                ><i class="fa-brands fa-facebook-f"></i
+                            ></a>
+                        </div>
+                        <div class="social_media-icon">
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        </div>
+                        <div class="social_media-icon">
+                            <a href="#"
+                                ><i class="fa-brands fa-instagram"></i
+                            ></a>
+                        </div>
+                        <div class="social_media-icon">
+                            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        </div>
+                        <div class="social_media-icon">
+                            <a href="#"
+                                ><i class="fa-regular fa-envelope"></i
+                            ></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="footer-cell">
-                <div class="title">allociné à l'étranger</div>
-                <div class="overseas-content">
-                    <div class="overseas-link">
-                        <a href="#">Filmstarts</a>
-                        <span class="light">Allemagne</span>
+                <div class="footer-cell">
+                    <div class="title-foot">allociné sur mobile</div>
+                    <div class="mobile-container">
+                        <div class="mobile-icon">
+                            <a href="#"><i class="fa-brands fa-apple"></i></a>
+                        </div>
+                        <div class="mobile-icon">
+                            <a href="#"
+                                ><img
+                                    src="./assets/img/icons8-android-24.png"
+                                    alt=""
+                            /></a>
+                        </div>
                     </div>
-                    <div class="overseas-link">
-                        <a href="#">SensaCine</a>
-                        <span class="light">Espagne</span>
-                    </div>
-                    <div class="overseas-link">
-                        <a href="#">Beyazperde</a>
-                        <span class="light">Turquie</span>
-                    </div>
-                    <div class="overseas-link">
-                        <a href="#">AdoroCinema</a>
-                        <span class="light">Brésil</span>
-                    </div>
-                    <div class="overseas-link">
-                        <a href="#">Sensacine México</a>
-                        <span class="light">Mexique</span>
+                </div>
+                <div class="footer-cell">
+                    <div class="title-foot">allociné à l'étranger</div>
+                    <div class="overseas-content">
+                        <div class="overseas-link">
+                            <a href="#">Filmstarts</a>
+                            <span class="light">Allemagne</span>
+                        </div>
+                        <div class="overseas-link">
+                            <a href="#">SensaCine</a>
+                            <span class="light">Espagne</span>
+                        </div>
+                        <div class="overseas-link">
+                            <a href="#">Beyazperde</a>
+                            <span class="light">Turquie</span>
+                        </div>
+                        <div class="overseas-link">
+                            <a href="#">AdoroCinema</a>
+                            <span class="light">Brésil</span>
+                        </div>
+                        <div class="overseas-link">
+                            <a href="#">Sensacine México</a>
+                            <span class="light">Mexique</span>
+                        </div>
                     </div>
                 </div>
             </div>

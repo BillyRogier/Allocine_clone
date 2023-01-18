@@ -1,5 +1,7 @@
 const menuBtn = document.getElementById("menu_icon");
-const userBtn = document.getElementById("user_btn");
+const userBtn = document.getElementById("user_btn-responsive");
+const menuLinks = document.getElementById("menu_links");
+const menuLogin = document.getElementById("menu_login");
 const main = document.querySelector("main");
 
 function main_active(element) {
@@ -11,15 +13,15 @@ function main_active(element) {
 }
 
 menuBtn.addEventListener("click", () => {
-    menuBtn.classList.toggle("active");
-    userBtn.classList.remove("active");
-    main_active(menuBtn);
+    menuLinks.classList.toggle("active");
+    menuLogin.classList.remove("active");
+    main_active(menuLinks);
 });
 
 userBtn.addEventListener("click", () => {
-    userBtn.classList.toggle("active");
-    menuBtn.classList.remove("active");
-    main_active(userBtn);
+    menuLogin.classList.toggle("active");
+    menuLinks.classList.remove("active");
+    main_active(menuLogin);
 });
 
 function slide_scroll(chevron, id) {
@@ -52,3 +54,43 @@ function slide_left(chevron, id) {
     slider.scrollLeft -= 314;
     slide_scroll(chevron, id);
 }
+
+function countElement(element) {
+    i = 0;
+    for (const child of element.children) {
+        i++;
+    }
+    return i;
+}
+
+function gridTemplate(element, w) {
+    element.forEach((elt) => {
+        elt.style["grid-template-columns"] =
+            "repeat(" + countElement(elt) + ", " + w + ")";
+    });
+}
+
+gridTemplate(document.querySelectorAll(".slider"), "147px");
+gridTemplate(document.querySelectorAll(".streaming"), "19.63rem");
+
+function navbar() {
+    if (window.innerWidth > 992) {
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.querySelector("header").style.top = "0";
+            } else {
+                document.querySelector("header").style.top = "-4.375rem";
+            }
+            prevScrollpos = currentScrollPos;
+        };
+    } else {
+        window.onscroll = function () {
+            document.querySelector("header").style.top = "0";
+        };
+    }
+}
+
+window.addEventListener("load", navbar);
+window.addEventListener("resize", navbar);
