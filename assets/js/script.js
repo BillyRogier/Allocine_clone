@@ -94,3 +94,17 @@ function navbar() {
 
 window.addEventListener("load", navbar);
 window.addEventListener("resize", navbar);
+
+const slider = document.querySelectorAll(".slider");
+
+window.addEventListener("load", function () {
+    for (i = 0; i < slider.length; i++) {
+        if (slider[i].scrollWidth <= slider[i].offsetWidth) {
+            const sliderContainer = slider[i].parentNode;
+            console.log(sliderContainer);
+            const arrow = sliderContainer.querySelector(".slider-indicator");
+            console.log(arrow);
+            arrow.style.display = "none";
+        }
+    }
+});
