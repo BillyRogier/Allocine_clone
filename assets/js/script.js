@@ -3,6 +3,7 @@ const userBtn = document.getElementById("user_btn-responsive");
 const menuLinks = document.getElementById("menu_links");
 const menuLogin = document.getElementById("menu_login");
 const main = document.querySelector("main");
+const slider = document.querySelectorAll(".slider");
 
 function main_active(element) {
     if (element.classList.contains("active")) {
@@ -24,36 +25,41 @@ userBtn.addEventListener("click", () => {
     main_active(menuLogin);
 });
 
-function slide_scroll(chevron, id) {
-    const chevronLeft =
-        document.getElementsByClassName("chevron-left")[chevron];
-    const chevronRight =
-        document.getElementsByClassName("chevron-right")[chevron];
-    const slider = document.getElementById(id);
+slider.forEach((elt) => {
+    elt.addEventListener("scroll", () => {
+        const chevronLeft = elt.parentNode.querySelector(".chevron-left");
+        const chevronRight = elt.parentNode.querySelector(".chevron-right");
 
-    if (slider.scrollLeft + slider.offsetWidth == slider.scrollWidth) {
-        chevronRight.classList.remove("active");
-        chevronLeft.classList.add("active");
-    } else if (slider.scrollLeft == 0) {
-        chevronRight.classList.add("active");
-        chevronLeft.classList.remove("active");
-    } else {
-        chevronLeft.classList.add("active");
-        chevronRight.classList.add("active");
-    }
+        if (elt.scrollLeft + elt.offsetWidth == elt.scrollWidth) {
+            chevronRight.classList.remove("active");
+            chevronLeft.classList.add("active");
+        } else if (elt.scrollLeft == 0) {
+            chevronRight.classList.add("active");
+            chevronLeft.classList.remove("active");
+        } else {
+            chevronLeft.classList.add("active");
+            chevronRight.classList.add("active");
+        }
+    });
+});
+
+function slideBtn(btn, direction) {
+    btn.forEach((elt) => {
+        elt.addEventListener("click", () => {
+            const slider = elt.parentNode.parentNode.querySelector(".slider");
+            if (direction == 1) {
+                slider.scrollLeft += 314;
+            } else {
+                slider.scrollLeft -= 314;
+            }
+        });
+    });
 }
 
-function slide_right(chevron, id) {
-    const slider = document.getElementById(id);
-    slider.scrollLeft += 314;
-    slide_scroll(chevron, id);
-}
-
-function slide_left(chevron, id) {
-    const slider = document.getElementById(id);
-    slider.scrollLeft -= 314;
-    slide_scroll(chevron, id);
-}
+const allChevronLeft = document.querySelectorAll(".chevron-left");
+const allChevronRight = document.querySelectorAll(".chevron-right");
+window.addEventListener("load", slideBtn(allChevronLeft, 0));
+window.addEventListener("load", slideBtn(allChevronRight, 1));
 
 function countElement(element) {
     i = 0;
@@ -70,7 +76,7 @@ function gridTemplate(element, w) {
     });
 }
 
-gridTemplate(document.querySelectorAll(".slider"), "147px");
+gridTemplate(slider, "147px");
 gridTemplate(document.querySelectorAll(".streaming"), "19.63rem");
 
 function navbar() {
@@ -106,8 +112,6 @@ function arrowShow(slider) {
         }
     }
 }
-
-const slider = document.querySelectorAll(".slider");
 
 window.addEventListener("load", arrowShow(slider));
 document.getElementsByTagName("BODY")[0].onresize = function () {
